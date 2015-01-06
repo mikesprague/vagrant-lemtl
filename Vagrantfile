@@ -8,9 +8,9 @@ vm_www_hostname = "www.vagrant-railo.dev"
 vm_sql_hostname = "mysql.vagrant-railo.dev"
 vm_timezone  = "US/Eastern"
 vm_name = "Railo Tomcat MySQL Vagrant Box v1"
-vm_max_memory = 2048
+vm_max_memory = 1024
 vm_num_cpus = 1
-vm_max_host_cpu_cap = "50"
+vm_max_host_cpu_cap = "40"
 
 # database configuration
 mysql_root_password = "password"
@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
 	config.vm.provider "virtualbox" do |v|
 		# set name of vm
 		v.name = vm_name
-		# no matter how much cpu is used in vm, use no more than half of host machine's cpu
+		# no matter how much cpu is used in vm, use no more than vm_max_host_cpu_cap amount
 		v.customize ["modifyvm", :id, "--cpuexecutioncap", vm_max_host_cpu_cap]
 		# set max amount of host machine ram allotted for vm to use
 		v.memory = vm_max_memory
