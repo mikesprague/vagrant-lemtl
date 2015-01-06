@@ -1,0 +1,35 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.sublime-workspace"
+			]
+			, "folder_exclude_patterns":
+			[
+				".vagrant"
+				, ".git"
+				, "webroot"
+			]
+			, "path": "/C/websites/vagrant-railo-tomcat-mysql"
+			, "name": "Railo Tomcat MySQL Vagrant Root"
+		}
+		, {
+			"file_exclude_patterns":
+			[
+				"*.sublime-workspace"
+			]
+			, "folder_exclude_patterns":
+			[	// uncomment line below to hide WEB-INF folder in sidebar
+				// "WEB-INF"
+			],
+			"path": "/C/websites/vagrant-railo-tomcat-mysql/webroot"
+			, "name": "Webroot"
+		}
+	]
+	, "settings": {
+		"spell_check": false
+		, "tab_size": 4
+	}
+}
