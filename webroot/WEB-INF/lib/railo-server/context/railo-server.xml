@@ -148,7 +148,7 @@ Path placeholders:
 		client-max-age
 			the max age of the client scope in days
 	-->
-	<scope applicationtimeout="1,0,0,0" cascade-to-resultset="yes" cascading="standard" client-directory-max-size="10mb" client-max-age="90" clientmanagement="no" merge-url-form="no" requesttimeout="0,0,0,50" sessionmanagement="yes" sessiontimeout="0,0,30,0" setclientcookies="yes" setdomaincookies="no"/>
+	<scope applicationtimeout="1,0,0,0" cascade-to-resultset="true" cascading="standard" client-directory-max-size="10mb" clientmanagement="true" clientstorage="cookie" clienttimeout="90,0,0,0" local-mode="classic" merge-url-form="false" requesttimeout="0,0,0,50" session-type="j2ee" sessionmanagement="true" sessionstorage="memory" sessiontimeout="0,0,30,0" setclientcookies="true" setdomaincookies="true"/>
 		
 	<mail spool-enable="yes" spool-interval="5" timeout="30">
 	</mail>
