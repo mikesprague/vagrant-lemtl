@@ -335,4 +335,4 @@ for every argument defined railo tries to call a matching setter method
 		<logger appender="resource" appender-arguments="path:{railo-config}/logs/memory.log" layout="classic" name="memory"/>
 	</logging>
 	
-</cfRailoConfiguration>
+<setting allow-compression="true" buffer-output="true" cfml-writer="white-space-pref" content-length="" suppress-content="false"/></cfRailoConfiguration>
