@@ -252,7 +252,7 @@ Path placeholders:
 	-->
 	<application listener-mode="curr2root" listener-type="mixed"/>
 	
-	<update location="http://www.getrailo.org" type="manual"/>
+	<update location="http://dev.getrailo.org" type="manual"/>
 	<!--
 	flex:
 		
