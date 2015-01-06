@@ -24,16 +24,18 @@ component output="false" {
 
 	this.datasources[ "railo-client" ] = {
 		class: "org.gjt.mm.mysql.Driver"
-		, connectionString: "jdbc:mysql://localhost:3306/cfartgallery?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
+		, connectionString: "jdbc:mysql://localhost:3306/railo_client?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
 		, username: "root"
 		, password: "password"
+		, storage: true
 	};
 
 	this.datasources[ "railo-session" ] = {
 		class: "org.gjt.mm.mysql.Driver"
-		, connectionString: "jdbc:mysql://localhost:3306/cfartgallery?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
+		, connectionString: "jdbc:mysql://localhost:3306/railo_session?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
 		, username: "root"
 		, password: "password"
+		, storage: true
 	};
 
 	/**
