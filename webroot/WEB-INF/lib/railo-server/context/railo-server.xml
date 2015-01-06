@@ -8,7 +8,7 @@ Path placeholders:
 	{system-directory}: path to thesystem directory
 	{web-context-hash}: hash of the web context
 
---><railo-configuration pw="f76d0a69568e8afa331cc07973d31292f73500ec941a12614c22c16b0e5f7140" version="4.2"><cfabort/>
+--><cfRailoConfiguration hspw="5d698fe0e55b3bca3976e7d0810057ccc5d1798cad9ed2fb755d3e167618ba37" pw="f76d0a69568e8afa331cc07973d31292f73500ec941a12614c22c16b0e5f7140" salt="4B374BCF-D1D1-43C6-9ADA21EE9A4CB91E" version="4.2"><cfabort/>
 
 	<!--
 	system:
@@ -335,4 +335,4 @@ for every argument defined railo tries to call a matching setter method
 		<logger appender="resource" appender-arguments="path:{railo-config}/logs/memory.log" layout="classic" name="memory"/>
 	</logging>
 	
-</railo-configuration>
+</cfRailoConfiguration>
