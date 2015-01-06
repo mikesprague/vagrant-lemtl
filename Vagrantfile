@@ -8,7 +8,7 @@ vm_www_hostname = "www.vagrant-railo.dev"
 vm_sql_hostname = "mysql.vagrant-railo.dev"
 vm_timezone  = "US/Eastern"
 vm_name = "Railo Tomcat MySQL Vagrant Box v1"
-vm_max_memory = 1024
+vm_max_memory = 2048
 vm_num_cpus = 1
 vm_max_host_cpu_cap = "50"
 
