@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><railo-configuration version="4.2">
+<?xml version="1.0" encoding="UTF-8"?><railo-configuration pw="f76d0a69568e8afa331cc07973d31292f73500ec941a12614c22c16b0e5f7140" version="4.2"><cfabort/>
 
 <!-- 
 Path placeholders:
