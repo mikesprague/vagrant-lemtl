@@ -5,7 +5,7 @@
 vm_ip_address = "192.168.50.25"
 vm_naked_hostname = "vagrant-railo.dev"
 vm_www_hostname = "www.vagrant-railo.dev"
-vm_sql_hostname = "mysql.vagrant-railo.dev"
+vm_sql_hostname = "db.vagrant-railo.dev"
 vm_timezone  = "US/Eastern"
 vm_name = "Railo Tomcat MySQL Vagrant Box v1"
 vm_max_memory = 1024
@@ -13,9 +13,10 @@ vm_num_cpus = 1
 vm_max_host_cpu_cap = "40"
 
 # database configuration
-mysql_root_password = "password"
-mysql_create_table_name = "cfartgallery"
-mysql_file_to_import = "data/cfartgallery.sql"
+db_server_type = "mariadb" # valid options: "mysql" or "mariadb"
+db_root_password = "password"
+db_create_database_name = "cfartgallery"
+db_file_to_import = "data/cfartgallery.sql"
 
 # synced folder configuration
 synced_webroot_local = "webroot/"
@@ -25,7 +26,9 @@ synced_webroot_owner = "vagrant"
 synced_webroot_group = "vagrant"
 
 # bash script paths
-bash_install_mysql = "bash-scripts/install-mysql.sh"
+bash_install_db_server = "bash-scripts/install-#{db_server_type}.sh"
+# bash_install_mysql = "bash-scripts/install-mysql.sh"
+# bash_install_mariadb = "bash-scripts/install-mariadb.sh"
 bash_install_tomcat = "bash-scripts/install-tomcat.sh"
 
 Vagrant.configure("2") do |config|
@@ -54,9 +57,9 @@ Vagrant.configure("2") do |config|
 		vm_www_hostname, vm_sql_hostname
 	]
 
-	# install/configure mysql
-	config.vm.provision :shell, :path => bash_install_mysql, :privileged => true, :args => [
-		mysql_root_password, mysql_file_to_import, mysql_create_table_name, vm_timezone
+	# install/configure database server
+	config.vm.provision :shell, :path => bash_install_db_server, :privileged => true, :args => [
+		dbot_password, mysql_file_to_import, db_create_database_name, vm_timezone
 	]
 
 	# set vm timezone
