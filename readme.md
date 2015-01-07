@@ -6,20 +6,20 @@
 ### Prerequisites
 #### Required
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
-  1. [Virtual Box and Virtual Box Guest Additions](https://www.virtualbox.org/wiki/Downloads) (v4.3.20 at time of writing )
-  2. [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.2 at time of writing)
+  - [Virtual Box and Virtual Box Guest Additions](https://www.virtualbox.org/wiki/Downloads) (v4.3.20 at time of writing )
+  - [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.2 at time of writing)
   
 
 #### Highly Recommended
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
-  1. [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v0.0.11 at time of writing)
-  ```
-  $ vagrant plugin install vagrant-hostsupdater
-  ```
-  2. [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.0 at time of writing)
-  ```
-  $ vagrant plugin install vagrant-vbguest
-  ```
+  - [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v0.0.11 at time of writing)
+```
+$ vagrant plugin install vagrant-hostsupdater
+```
+  - [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.0 at time of writing)
+```
+$ vagrant plugin install vagrant-vbguest
+```
 
 ---
 ### What's Included
