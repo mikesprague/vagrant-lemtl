@@ -1,14 +1,14 @@
 # Railo / Tomcat / MySQL Vagrant Box
-## Last Updated January 06, 2015
+##### Last Updated January 07, 2015
 
---- 
+---
 
 ### Prerequisites
 #### Required
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
   - [Virtual Box and Virtual Box Guest Additions](https://www.virtualbox.org/wiki/Downloads) (v4.3.20 at time of writing )
   - [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.2 at time of writing)
-  
+
 
 #### Highly Recommended
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
@@ -27,6 +27,7 @@ Note: All version numbers are as of the time of writing
 * Ubuntu 14.04
 * Tomcat 7.0.52
   * catalina.properties tweaks for improved performance
+  * Set up iptables and port forwarding so vm can be accessed by hostname or ip address directly (without a port number)
 * Railo 4.2.2.004
   * MySQL and Postgres drivers updated to current versions (as of time of writing)
   * [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
@@ -38,6 +39,7 @@ Note: All version numbers are as of the time of writing
     * Update provider set to Development Releases
 * MySQL 5.5.40
   * lower_case_table_names = 1 (disables case sensitivity)
+  * bind-address set to 0.0.0.0 so MySQL can be accessed from the host machine directly (without an ssh tunnel)
 
 ---
 ### Installation
@@ -84,7 +86,7 @@ or
 #### TODO
   - Add optional Nginx install/configuration
   - Add MariaDB as an option for the database server
-  
+
 ---
 ##### Project Inspiration
 The following posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/) in September, 2014, heavily influenced this project:
