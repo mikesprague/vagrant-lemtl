@@ -66,15 +66,14 @@ Vagrant.configure("2") do |config|
 	]
 
 	# install/configure nginx
-	# config.vm.provision :shell, :path => "bash-scripts/step-4-install-nginx.sh", :privileged => true, :args => [
-	# 	vm_name, vm_www_hostname, vm_ip_address, vm_sql_hostname
-	# ]
+	config.vm.provision :shell, :path => "bash-scripts/step-4-install-nginx.sh", :privileged => true
 
 	# install/configure database server
 	config.vm.provision :shell, :path => "bash-scripts/step-5-install-#{db_server_type}.sh", :privileged => true, :args => [
 		db_root_password, db_sql_file_to_import, db_create_database_name, db_mariadb_version
 	]
 
+	# confirm setup is complete and output connection info
 	config.vm.provision :shell, :path => "bash-scripts/step-6-final-output.sh", :privileged => true, :args => [
 		vm_name, vm_www_hostname, vm_ip_address, vm_sql_hostname
 	]
