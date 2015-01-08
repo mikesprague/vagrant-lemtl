@@ -7,7 +7,6 @@ server {
 	# access_log					/var/log/nginx/access.log;
 	# error_log					/var/log/nginx/error.log;
 
-	# location / {
 	location ~ \.(cfm|cfml|cfc)$ {
 		# index  					index.cfm;
 		proxy_pass          	http://127.0.0.1:8080/;
@@ -22,8 +21,9 @@ server {
 		proxy_set_header		X-Forwarded-Server 	$host;
 		expires             	epoch;
 	}
-	location ~* \.(?:ico|css|js|gif|jpe?g|png)$ {
-		# specific settings for files ending in suffixes .ico, .css, .js, gif, etc
-		# defined using a regex, under the root defined in the server block
+	location ~* \.(gif|jpe?g|png|js|ico|css|pdf)$ {
+		expires 				30d;
+		proxy_cache_valid    	200  1d;
+		proxy_cache_use_stale 	error timeout invalid_header updating http_500 http_502 http_503 http_504;
 	}
 }
