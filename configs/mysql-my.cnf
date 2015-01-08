@@ -42,15 +42,21 @@ tmpdir		= /tmp
 lc-messages-dir	= /usr/share/mysql
 skip-external-locking
 
+# disables case sensitivity
+lower_case_table_names = 1
+
 #
 # Instead of skip-networking the default is now to listen only on
 # localhost which is more compatible and is not less secure.
-bind-address = 0.0.0.0
+# bind-address		= 127.0.0.1
+
+# set bind-address to 0.0.0.0 to allow connections from anywhere
+# this enables connection from host machine to vm without an ssh tunnel
+bind-address		= 0.0.0.0
 
 #
 # * Fine Tuning
 #
-lower_case_table_names = 1
 key_buffer		= 16M
 max_allowed_packet	= 16M
 thread_stack		= 192K

@@ -1,20 +1,8 @@
 #!/bin/bash
 
-echo "================= START INSTALL-MYSQL.SH $(date +"%r") ================="
+echo "================= START STEP-5-INSTALL-MYSQL.SH $(date +"%r") ================="
 echo " "
-echo "BEGIN Set VM timezone ..."
-
-# set vm timezone
-echo $4 | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
-
-# a little housekeeping
-echo "... Doing a little housekeeping ..."
-sudo apt-get -y autoremove > /dev/null
-sudo apt-get -y update --fix-missing > /dev/null
-
-echo "... END Set VM timezone."
-echo " "
-echo "BEGIN Database setup ..."
+echo "BEGIN Database server setup ..."
 
 if [ ! -d "/etc/mysql" ]; then
 	sudo apt-get -y update > /dev/null
@@ -30,7 +18,7 @@ if [ ! -d "/etc/mysql" ]; then
 	# make mysql available to connect to from outside world without ssh tunnel
 	# copy file with above changes and the lower_case_table_names = 1 flag set to
 	# ignore case sensitivity in the database
-	sudo cp /vagrant/configs/my.cnf /etc/mysql/my.cnf
+	sudo cp /vagrant/configs/mysql-my.cnf /etc/mysql/my.cnf
 
 	sudo service mysql restart > /dev/null
 fi
@@ -38,8 +26,9 @@ fi
 if [ ! -f /var/log/db_setup ]; then
 	echo "... Setting up database and granting privileges ..."
 
-	# add grant privileges to mysql root user (from all hosts)
+	# create database
 	echo "CREATE DATABASE IF NOT EXISTS $3;" | mysql -uroot -p$1
+	# grant all privileges to mysql root user (from all hosts) on all databases
 	echo "GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '$1' WITH GRANT OPTION;" | mysql -uroot -p$1
 	echo "FLUSH PRIVILEGES;" | mysql -uroot -p$1
 
@@ -57,6 +46,6 @@ echo "... Creating databases for Railo's session and client storage ..."
 echo "CREATE DATABASE IF NOT EXISTS railo_client;" | mysql -uroot -p$1
 echo "CREATE DATABASE IF NOT EXISTS railo_session;" | mysql -uroot -p$1
 
-echo "... END Database setup."
+echo "... END Database server setup."
 echo " "
-echo "================= END INSTALL-MYSQL.SH $(date +"%r") ================="
+echo "================= END STEP-5-INSTALL-MYSQL.SH $(date +"%r") ================="
