@@ -81,15 +81,18 @@ or [http://192.168.50.25/](http://192.168.50.25/)
 * On Windows (host machines) you should run your terminal as an Administrator; you will also need to make sure your Hosts file isn't set to read-only if you want to take advantage of the hostname functionality. Alternatively, simply use the IP address anywhere you would use the hostname (connecting to database server, etc).
 
 ---
+
 #### Planned Features
 * [ ] Add optional Nginx install/configuration
 * [x] Add MariaDB as an option for the database server
+
 ---
 
 ##### Project Inspiration
 The following posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/) in September, 2014, heavily influenced this project:
-	- [Easy Railo App Development with Vagrant](http://blog.cmdbase.io/easy-railo-development-with-vagrant/)
-	- [Saving Railo Configurations](http://blog.cmdbase.io/saving-railo-configurations/)
+* [Easy Railo App Development with Vagrant](http://blog.cmdbase.io/easy-railo-development-with-vagrant/)
+* [Saving Railo Configurations](http://blog.cmdbase.io/saving-railo-configurations/)
+
 ---
 
 ## License
