@@ -27,7 +27,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 	* catalina.properties tweaks for improved performance
 	* Set up iptables port forwarding so vm can be accessed by hostname or ip address directly (without port number)
 * Nginx 1.4.6
-	* set up to serve all static (non-Railo: cfm/cfc) resources
+	* set up to serve all static (non-Railo) content
 * Railo 4.2.2.004
 	* MySQL and Postgres drivers updated to current versions (as of time of writing)
 	* [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
@@ -85,16 +85,18 @@ or [http://192.168.50.25/](http://192.168.50.25/)
 ---
 
 #### Planned Features
-* [ ] Add optional Nginx install/configuration
+* [x] Add Nginx install/configuration
 * [x] Add MariaDB as an option for the database server
 
 ---
 
 ##### Project Inspiration
-The following posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/) in September, 2014, heavily influenced this project:
+The following two posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/) in September, 2014, heavily influenced this project:
 * [Easy Railo App Development with Vagrant](http://blog.cmdbase.io/easy-railo-development-with-vagrant/)
 * [Saving Railo Configurations](http://blog.cmdbase.io/saving-railo-configurations/)
 
+Help with Nginx config from the following blog post by [Yuri Vorontsov](http://www.silverink.nl/):
+* [Separating static from dynamic traffic with Nginx and Railo](http://www.silverink.nl/splitting-static-dynamic-traffic-nginx-railo/)
 ---
 
 ## License
