@@ -1,16 +1,21 @@
 component output="false" {
 
 	this.name = hash( cgi.server_name, "MD5", "utf-8" );
+	this.locale = "en_US";
+	this.timezone = "America/New_York";
+	this.charset.web="UTF-8";
+	this.charset.resource="UTF-8";
+	this.compression = true;
 	this.applicationTimeout = createTimeSpan( 1, 0, 0, 0 );
 	this.sessionManagement = true;
 	this.sessionTimeout = createTimeSpan( 0, 0, 30, 0 );
 	this.sessionType = "j2ee";
-	this.sessionStorage = "railo-session";
+	this.sessionStorage = "railo_session";
 	this.sessioncookie.httponly = true;
 	this.sessioncookie.secure = true;
 	this.loginStorage = "session";
 	this.clientManagement = true;
-	this.clientStorage = "railo-client";
+	this.clientStorage = "railo_client";
 	this.setClientCookies = true;
 	this.setDomainCookies = true;
 	this.scriptProtect = true;
@@ -22,7 +27,7 @@ component output="false" {
 		, password: "password"
 	};
 
-	this.datasources[ "railo-client" ] = {
+	this.datasources[ "railo_client" ] = {
 		class: "org.gjt.mm.mysql.Driver"
 		, connectionString: "jdbc:mysql://localhost:3306/railo_client?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
 		, username: "root"
@@ -30,7 +35,7 @@ component output="false" {
 		, storage: true
 	};
 
-	this.datasources[ "railo-session" ] = {
+	this.datasources[ "railo_session" ] = {
 		class: "org.gjt.mm.mysql.Driver"
 		, connectionString: "jdbc:mysql://localhost:3306/railo_session?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
 		, username: "root"
