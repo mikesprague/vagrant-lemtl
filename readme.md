@@ -12,10 +12,11 @@ It is assumed you have Virtual Box and Vagrant installed. If not, then grab the 
 
 #### Highly Recommended
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
-* [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v0.0.11)
-	* `$ vagrant plugin install vagrant-hostsupdater`
-* [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.0)
-	* `$ vagrant plugin install vagrant-vbguest`
+* [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v0.0.11).
+```$ vagrant plugin install vagrant-hostsupdater```
+* [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.0).
+```$ vagrant plugin install vagrant-vbguest```
+
 ---
 
 ### What's Included
