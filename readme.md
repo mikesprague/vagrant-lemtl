@@ -49,7 +49,7 @@ $ vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Railo Tomcat MariaDB/MySQL Vagrant Box v1.1.0
+==> default: Railo Tomcat MariaDB/MySQL Vagrant Box
 ==> default:
 ==> default: ===============================================================
 ==> default:
