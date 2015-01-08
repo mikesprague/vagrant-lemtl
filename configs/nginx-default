@@ -3,23 +3,19 @@ server {
 	server_name					www.vagrant-railo.dev vagrant-railo.dev;
 	root						/sites/webroot;
 
-	# proxy_cache					one;
-	# access_log					/var/log/nginx/access.log;
-	# error_log					/var/log/nginx/error.log;
-
-	location ~ \.(cfm|cfml|cfc)$ {
-		# index  					index.cfm;
-		proxy_pass          	http://127.0.0.1:8080/;
+	location ~* \.(cfm|cfml|cfc)$ {
+		index  				index.cfm;
+		proxy_pass          	http://127.0.0.1:8080;
 		proxy_read_timeout 		400;
 		proxy_connect_timeout 	400;
 		proxy_redirect      	off;
-		proxy_set_header    	Host            	$host;
+		proxy_set_header    	host 				$host;
 		proxy_set_header 		server_name 		$host;
-		proxy_set_header    	X-Real-IP       	$remote_addr;
+		proxy_set_header    	X-Real-IP 			$remote_addr;
 		proxy_set_header    	X-Forwarded_For 	$proxy_add_x_forwarded_for;
 		proxy_set_header		X-Forwarded-Host 	$host;
 		proxy_set_header		X-Forwarded-Server 	$host;
-		expires             	epoch;
+		expires					epoch;
 	}
 	location ~* \.(gif|jpe?g|png|js|ico|css|pdf)$ {
 		expires 				30d;
