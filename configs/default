@@ -1,14 +1,29 @@
 server {
-	listen			80;
-	server_name		vagrant-railo.dev;
-	root			/sites/webroot;
+	listen						80;
+	server_name					www.vagrant-railo.dev vagrant-railo.dev;
+	root						/sites/webroot;
 
-	proxy_cache one;
+	# proxy_cache					one;
+	# access_log					/var/log/nginx/access.log;
+	# error_log					/var/log/nginx/error.log;
 
-	location / {
-		proxy_set_header X-Forwarded-Host $host;
-		proxy_set_header X-Forwarded-Server $host;
-		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-		proxy_pass http://127.0.0.1:8080/;
+	# location / {
+	location ~ \.(cfm|cfml|cfc)$ {
+		# index  					index.cfm;
+		proxy_pass          	http://127.0.0.1:8080/;
+		proxy_read_timeout 		400;
+		proxy_connect_timeout 	400;
+		proxy_redirect      	off;
+		proxy_set_header    	Host            	$host;
+		proxy_set_header 		server_name 		$host;
+		proxy_set_header    	X-Real-IP       	$remote_addr;
+		proxy_set_header    	X-Forwarded_For 	$proxy_add_x_forwarded_for;
+		proxy_set_header		X-Forwarded-Host 	$host;
+		proxy_set_header		X-Forwarded-Server 	$host;
+		expires             	epoch;
+	}
+	location ~* \.(?:ico|css|js|gif|jpe?g|png)$ {
+		# specific settings for files ending in suffixes .ico, .css, .js, gif, etc
+		# defined using a regex, under the root defined in the server block
 	}
 }
