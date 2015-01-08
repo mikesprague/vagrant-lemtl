@@ -7,16 +7,18 @@ vm_naked_hostname = "vagrant-railo.dev"
 vm_www_hostname = "www.vagrant-railo.dev"
 vm_sql_hostname = "db.vagrant-railo.dev"
 vm_timezone  = "US/Eastern"
-vm_name = "Railo Tomcat MySQL Vagrant Box v1"
+wm_current_version = "v1.1.0"
+vm_name = "Railo Tomcat MariaDB/MySQL Vagrant Box #{wm_current_version}"
 vm_max_memory = 1024
 vm_num_cpus = 1
 vm_max_host_cpu_cap = "40"
 
 # database configuration
 db_server_type = "mariadb" # valid options: "mysql" or "mariadb"
+db_mariadb_version = "10.0"
 db_root_password = "password"
 db_create_database_name = "cfartgallery"
-db_file_to_import = "data/cfartgallery.sql"
+db_sql_file_to_import = "data/cfartgallery.sql"
 
 # synced folder configuration
 synced_webroot_local = "webroot/"
@@ -25,11 +27,6 @@ synced_webroot_id = "vagrant-webroot"
 synced_webroot_owner = "vagrant"
 synced_webroot_group = "vagrant"
 
-# bash script paths
-bash_install_db_server = "bash-scripts/install-#{db_server_type}.sh"
-# bash_install_mysql = "bash-scripts/install-mysql.sh"
-# bash_install_mariadb = "bash-scripts/install-mariadb.sh"
-bash_install_tomcat = "bash-scripts/install-tomcat.sh"
 
 Vagrant.configure("2") do |config|
 	config.vm.box = "ubuntu/trusty64"
@@ -57,16 +54,28 @@ Vagrant.configure("2") do |config|
 		vm_www_hostname, vm_sql_hostname
 	]
 
-	# install/configure database server
-	config.vm.provision :shell, :path => bash_install_db_server, :privileged => true, :args => [
-		dbot_password, mysql_file_to_import, db_create_database_name, vm_timezone
+	# set vm timezone and do some cleanup before installations
+	config.vm.provision :shell, :path => "bash-scripts/step-1-set-vm-timezone.sh", :privileged => true, :args => vm_timezone
+
+	# install miscellaneous utilities
+	config.vm.provision :shell, :path => "bash-scripts/step-2-install-utilities.sh", :privileged => true
+
+	# install/configure tomcat and iptables port forwarding (enable hostname/ip access without a port port number in the url)
+	config.vm.provision :shell, :path => "bash-scripts/step-3-install-tomcat.sh", :privileged => true, :args => [
+		vm_name, vm_www_hostname, vm_ip_address, vm_sql_hostname
 	]
 
-	# set vm timezone
-	# install/configure tomcat
-	# install/configure iptables
-	# setup port forwarding to enable hostname/ip access without a port port number in the url
-	config.vm.provision :shell, :path => bash_install_tomcat, :privileged => true, :args => [
+	# install/configure nginx
+	# config.vm.provision :shell, :path => "bash-scripts/step-4-install-nginx.sh", :privileged => true, :args => [
+	# 	vm_name, vm_www_hostname, vm_ip_address, vm_sql_hostname
+	# ]
+
+	# install/configure database server
+	config.vm.provision :shell, :path => "bash-scripts/step-5-install-#{db_server_type}.sh", :privileged => true, :args => [
+		db_root_password, db_sql_file_to_import, db_create_database_name, db_mariadb_version
+	]
+
+	config.vm.provision :shell, :path => "bash-scripts/step-6-final-output.sh", :privileged => true, :args => [
 		vm_name, vm_www_hostname, vm_ip_address, vm_sql_hostname
 	]
 
