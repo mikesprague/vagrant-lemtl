@@ -12,7 +12,7 @@ if [ ! -d "/etc/nginx" ]; then
 fi
 
 # copy our modified nginx default site config to the vm
-sudo cp /configs/nginx-default /etc/nginx/sites-available/default
+sudo cp /vagrant/configs/nginx-default /etc/nginx/sites-available/default
 
 # restart nginx
 sudo service nginx restart > /dev/null
