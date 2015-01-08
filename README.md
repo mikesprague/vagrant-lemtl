@@ -40,6 +40,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * MariaDB 10.0.15 or MySQL 5.5.40 (defaults to MariaDB, configure in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so MariaDB/MySQL can be accessed from the host machine directly (without ssh tunnel)
+
 ---
 
 ### Installation
@@ -95,8 +96,10 @@ The following two posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/)
 * [Easy Railo App Development with Vagrant](http://blog.cmdbase.io/easy-railo-development-with-vagrant/)
 * [Saving Railo Configurations](http://blog.cmdbase.io/saving-railo-configurations/)
 
+
 Help with Nginx config from the following blog post by [Yuri Vorontsov](http://www.silverink.nl/):
 * [Separating static from dynamic traffic with Nginx and Railo](http://www.silverink.nl/splitting-static-dynamic-traffic-nginx-railo/)
+
 ---
 
 ## License
