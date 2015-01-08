@@ -1,4 +1,4 @@
-# Railo / Tomcat / MySQL Vagrant Box
+# Railo / Tomcat / Nginx / MariaDB (or MySQL) Vagrant Box
 ##### Last Updated January 08, 2015
 ---
 
