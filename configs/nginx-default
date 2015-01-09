@@ -4,7 +4,7 @@ server {
 	root						/sites/webroot;
 
 	location ~* \.(cfm|cfml|cfc)$ {
-		index  				index.cfm;
+		index  					index.cfm index.cfml default.cfm default.cfml;
 		proxy_pass          	http://127.0.0.1:8080;
 		proxy_read_timeout 		400;
 		proxy_connect_timeout 	400;
@@ -17,9 +17,10 @@ server {
 		proxy_set_header		X-Forwarded-Server 	$host;
 		expires					epoch;
 	}
-	location ~* \.(gif|jpe?g|png|js|ico|css|pdf)$ {
+	location ~* \.(html?|css|js|gif|jpe?g|png|ico|pdf|zip|docx?|pptx?|xlsx?)$ {
 		expires 				30d;
 		proxy_cache_valid    	200  1d;
+		index  					index.htm index.html default.htm default.html;
 		proxy_cache_use_stale 	error timeout invalid_header updating http_500 http_502 http_503 http_504;
 	}
 }
