@@ -1,5 +1,5 @@
 # Railo / Tomcat / Nginx / MariaDB (or MySQL) Vagrant Box
-##### Last Updated January 08, 2015
+##### Last Updated January 09, 2015
 ---
 
 ### Prerequisites
