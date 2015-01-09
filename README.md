@@ -3,7 +3,7 @@
 ---
 
 ### Prerequisites
-NOTE: All version numbers used below are confirmed to work and are current as of the time of this writing
+NOTE: All version numbers used in this document are confirmed to work, and are current, as of the time of this writing
 
 #### Required
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
@@ -20,21 +20,21 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ---
 
 ### What's Included
-* Ubuntu 14.04
+* Ubuntu Server 14.10 64bit
 	* Makes sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set's vm timezone (configure in Vagrantfile)
-* Tomcat 7.0.52
+* Java 1.7.0_65
+* Tomcat 7.0.55
 	* catalina.properties tweaks for improved performance
 	* Set up iptables port forwarding so vm can be accessed by hostname or ip address directly (without port number)
-* Nginx 1.4.6
+* Nginx 1.6.2
 	* set up to serve all static (non-Railo) content
 * Railo 4.2.2.004
 	* MySQL and Postgres drivers updated to current versions (as of time of writing)
 	* [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
 	* railo-inst.jar added to javaagent
 	* Tweaks to Railo via server admin
-		* Use J2EE sessions
-		* Smart whitespace suppression and gzip compression enabled
+		* Smart whitespace suppression
 		* Preserve single quotes option enabled for dataase queries
 		* Update provider set to Development Releases
 * MariaDB 10.0.15 or MySQL 5.5.40 (defaults to MariaDB, configure in Vagrantfile)
@@ -53,7 +53,7 @@ $ vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Railo Tomcat MariaDB/MySQL Vagrant Box
+==> default: Railo_Tomcat_Nginx_MariaDB_MySQL_Vagrant_v1.2.1
 ==> default:
 ==> default: ===============================================================
 ==> default:
