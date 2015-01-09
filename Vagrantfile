@@ -3,11 +3,11 @@
 
 # server configuration
 vm_ip_address = "192.168.50.25"
-vm_naked_hostname = "vagrant-railo.dev"
-vm_www_hostname = "www.vagrant-railo.dev"
-vm_sql_hostname = "db.vagrant-railo.dev"
+vm_naked_hostname = "railo-vagrant.local"
+vm_www_hostname = "www.railo-vagrant.local"
+vm_sql_hostname = "db.railo-vagrant.local"
 vm_timezone  = "US/Eastern"
-vm_current_version = "v1.2.0"
+vm_current_version = "v1.2.1"
 vm_name = "Railo_Tomcat_Nginx_MariaDB_MySQL_Vagrant_#{vm_current_version}"
 vm_max_memory = 1024
 vm_num_cpus = 1
@@ -29,9 +29,8 @@ synced_webroot_group = "vagrant"
 
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "ubuntu/trusty64"
-	# config.vm.box_url = "http://files.vagrantup.com/trusty64.box"
-	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+	config.vm.box = "ubuntu/utopic64"
+	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-amd64-vagrant-disk1.box"
 	config.vm.boot_timeout = 90
 
 	config.vm.provider "virtualbox" do |v|
@@ -48,11 +47,13 @@ Vagrant.configure("2") do |config|
 	# set vm ip address
 	config.vm.network :private_network, ip: vm_ip_address
 
-	# set vm hostname
-	config.vm.hostname = vm_naked_hostname
-	config.hostsupdater.aliases = [
-		vm_www_hostname, vm_sql_hostname
-	]
+	if Vagrant.has_plugin?("vagrant-hostsupdater")
+		# set vm hostname
+		config.vm.hostname = vm_naked_hostname
+		config.hostsupdater.aliases = [
+			vm_www_hostname, vm_sql_hostname
+		]
+	end
 
 	# set vm timezone and do some cleanup before installations
 	config.vm.provision :shell, :path => "bash-scripts/step-1-set-vm-timezone.sh", :privileged => true, :args => vm_timezone

@@ -1,6 +1,6 @@
 server {
 	listen						80;
-	server_name					www.vagrant-railo.dev vagrant-railo.dev;
+	server_name					www.railo-vagrant.local railo-vagrant.local;
 	root						/sites/webroot;
 
 	location ~* \.(cfm|cfml|cfc)$ {
