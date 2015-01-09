@@ -76,7 +76,7 @@ Once the Vagrant box finishes and is ready, you should see something like this i
 ==> default:
 ==> default: ===============================================================
 ```
-Once you see that, you should be able to browse to [http://www.vagrant-railo.dev/](http://www.vagrant-railo.dev/)
+Once you see that, you should be able to browse to [http://www.railo-vagrant.local/](http://www.railo-vagrant.local/)
 or [http://192.168.50.25/](http://192.168.50.25/)
 (it may take a few minutes the first time a page loads after bringing your box up, subsequent requests should be much faster).
 
@@ -85,13 +85,13 @@ or [http://192.168.50.25/](http://192.168.50.25/)
 
 ---
 
-#### Planned Features
+#### Currently Planned Features
 * [x] Add Nginx install/configuration
 * [x] Add MariaDB as an option for the database server
 
 ---
 
-##### Project Inspiration
+#### References
 The following two posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/) in September, 2014, heavily influenced this project:
 * [Easy Railo App Development with Vagrant](http://blog.cmdbase.io/easy-railo-development-with-vagrant/)
 * [Saving Railo Configurations](http://blog.cmdbase.io/saving-railo-configurations/)
