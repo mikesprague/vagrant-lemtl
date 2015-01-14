@@ -29,8 +29,8 @@ synced_webroot_group = "vagrant"
 
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "ubuntu/utopic64"
-	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-amd64-vagrant-disk1.box"
+	config.vm.box = "ubuntu/trusty64"
+	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
 	config.vm.boot_timeout = 90
 
 	config.vm.provider "virtualbox" do |v|
@@ -80,7 +80,7 @@ Vagrant.configure("2") do |config|
 	]
 
 	# forward vm port 80 to 8080
-	config.vm.network :forwarded_port, :guest => 80, :host => 8080, :auto_correct => true
+	# config.vm.network :forwarded_port, :guest => 80, :host => 8080, :auto_correct => true
 
 	# add synced folder
 	config.vm.synced_folder synced_webroot_local, synced_webroot_box, :id => synced_webroot_id, :owner => synced_webroot_owner, :group => synced_webroot_group
