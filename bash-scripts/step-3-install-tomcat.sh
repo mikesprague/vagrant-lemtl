@@ -21,13 +21,6 @@ sudo cp /vagrant/configs/setenv.sh /usr/share/tomcat7/bin/setenv.sh
 # restart tomcat
 sudo service tomcat7 restart > /dev/null
 
-# configure iptables port forwarding
-echo "... Configuring port forwarding ..."
-# configure iptables to forward incoming requests on port 80 to port 8080 so they hit tomcat
-sudo iptables -t nat -I PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080 > /dev/null
-# restart tomcat
-sudo service tomcat7 restart > /dev/null
-
 echo "... END setting up Tomcat."
 echo " "
 echo "================= FINISH STEP-3-INSTALL-TOMCAT.SH $(date +"%r") ================="
