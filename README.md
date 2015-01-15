@@ -26,9 +26,8 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * Java 1.7.0_65
 * Tomcat 7.0.55
 	* catalina.properties tweaks for improved performance
-	* Set up iptables port forwarding so vm can be accessed by hostname or ip address directly (without port number)
 * Nginx 1.6.2
-	* set up to serve all static (non-Railo) content
+	* set up to serve all static (non-Railo) content and reverse-proxy cfm/cfc requests to Tomcat
 * Railo 4.2.2.004
 	* MySQL and Postgres drivers updated to current versions (as of time of writing)
 	* [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
