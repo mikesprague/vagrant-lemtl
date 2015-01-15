@@ -79,9 +79,6 @@ Vagrant.configure("2") do |config|
 		vm_name, vm_www_hostname, vm_ip_address, vm_sql_hostname
 	]
 
-	# forward vm port 80 to 8080
-	# config.vm.network :forwarded_port, :guest => 80, :host => 8080, :auto_correct => true
-
 	# add synced folder
 	config.vm.synced_folder synced_webroot_local, synced_webroot_box, :id => synced_webroot_id, :owner => synced_webroot_owner, :group => synced_webroot_group
 end
