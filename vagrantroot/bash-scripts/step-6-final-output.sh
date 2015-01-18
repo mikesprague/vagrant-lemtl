@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# some final housekeeping
+sudo apt-get -y autoremove > /dev/null
+
 echo " "
 echo "$1"
 echo " "

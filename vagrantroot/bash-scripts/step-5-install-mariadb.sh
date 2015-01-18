@@ -6,10 +6,9 @@ echo "BEGIN Database server setup ..."
 
 
 if [ ! -d "/etc/mysql" ]; then
-
 	echo "... Importing key, adding MariaDB repo and updating ..."
 	sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db > /dev/null
-	sudo add-apt-repository -y "deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/$4/ubuntu trusty main" > /dev/null
+	sudo add-apt-repository -y "deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/$4/ubuntu utopic main" > /dev/null
 	sudo apt-get update -y > /dev/null
 
 	echo "... Setting MariaDB root user password ..."
@@ -28,20 +27,11 @@ if [ ! -d "/etc/mysql" ]; then
 	sudo service mysql restart > /dev/null
 fi
 
-if [ ! -f /var/log/db_setup ]; then
-	echo "... Setting up database and granting privileges ..."
-
-	# create database
-	echo "CREATE DATABASE IF NOT EXISTS $3;" | mysql -uroot -p$1
-	# grant all privileges to mysql root user (from all hosts) on all databases
-	echo "GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '$1' WITH GRANT OPTION;" | mysql -uroot -p$1
-	echo "FLUSH PRIVILEGES;" | mysql -uroot -p$1
-
-	touch /var/log/db_setup
-fi
-
+echo "... Setting up database and granting privileges ..."
 if [ -f /vagrant/$2 ]; then
 	echo "... SQL file found, importing data (this may take a few minutes) ..."
+	# create database
+	echo "CREATE DATABASE IF NOT EXISTS $3;" | mysql -uroot -p$1
 	# if a sql file is passed in (and exists in the data directory), import it
 	echo "SOURCE /vagrant/$2;" | mysql -uroot -p$1 -f -D $3
 fi
@@ -50,6 +40,10 @@ fi
 echo "... Creating databases for Railo's session and client storage ..."
 echo "CREATE DATABASE IF NOT EXISTS railo_client;" | mysql -uroot -p$1
 echo "CREATE DATABASE IF NOT EXISTS railo_session;" | mysql -uroot -p$1
+
+# grant all privileges to mysql root user (from all hosts) on all databases
+echo "GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '$1' WITH GRANT OPTION;" | mysql -uroot -p$1
+echo "FLUSH PRIVILEGES;" | mysql -uroot -p$1
 
 echo "... END Database server setup."
 echo " "

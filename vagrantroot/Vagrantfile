@@ -7,7 +7,7 @@ vm_naked_hostname = "railo-vagrant.local"
 vm_www_hostname = "www.railo-vagrant.local"
 vm_sql_hostname = "db.railo-vagrant.local"
 vm_timezone  = "US/Eastern"
-vm_current_version = "v1.2.1"
+vm_current_version = "v1.0.0"
 vm_name = "Railo_Tomcat_Nginx_MariaDB_MySQL_Vagrant_#{vm_current_version}"
 vm_max_memory = 1024
 vm_num_cpus = 1
@@ -21,8 +21,8 @@ db_create_database_name = "cfartgallery"
 db_sql_file_to_import = "data/cfartgallery.sql"
 
 # synced folder configuration
-synced_webroot_local = "webroot/"
-synced_webroot_box = "/sites/webroot"
+synced_webroot_local = "../webroot/"
+synced_webroot_box = "/var/www/sites/default"
 synced_webroot_id = "vagrant-webroot"
 synced_webroot_owner = "vagrant"
 synced_webroot_group = "vagrant"
@@ -31,7 +31,7 @@ synced_webroot_group = "vagrant"
 Vagrant.configure("2") do |config|
 	config.vm.box = "ubuntu/utopic64"
 	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/utopic/current/utopic-server-cloudimg-amd64-vagrant-disk1.box"
-	config.vm.boot_timeout = 90
+	config.vm.boot_timeout = 120
 
 	config.vm.provider "virtualbox" do |v|
 		# set name of vm

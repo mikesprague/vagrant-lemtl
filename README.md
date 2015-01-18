@@ -1,5 +1,5 @@
 # Railo / Tomcat / Nginx / MariaDB (or MySQL) Vagrant Box
-##### Last Updated January 09, 2015
+##### Last Updated January 18, 2015
 ---
 
 ### Prerequisites
@@ -20,14 +20,13 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ---
 
 ### What's Included
-* Ubuntu Server 14.10 64bit
+* Ubuntu 14.10 Server (Utopic Unicorn) 64bit
 	* Makes sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set's vm timezone (configure in Vagrantfile)
-* Java 1.7.0_65
-* Tomcat 7.0.55
+* Tomcat 7.0.55 with Java 1.7.0_65
 	* catalina.properties tweaks for improved performance
 * Nginx 1.6.2
-	* set up to serve all static (non-Railo) content and reverse-proxy cfm/cfc requests to Tomcat
+	* set up to serve all static (non-Railo) content and reverse-proxies cfm/cfc/jsp requests to Tomcat
 * Railo 4.2.2.004
 	* MySQL and Postgres drivers updated to current versions (as of time of writing)
 	* [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
@@ -36,9 +35,9 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 		* Smart whitespace suppression
 		* Preserve single quotes option enabled for dataase queries
 		* Update provider set to Development Releases
-* MariaDB 10.0.15 or MySQL 5.5.40 (defaults to MariaDB, configure in Vagrantfile)
+* MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configure in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
-	* bind-address set to 0.0.0.0 so MariaDB/MySQL can be accessed from the host machine directly (without ssh tunnel)
+	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 
 ---
 
@@ -46,29 +45,29 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working.
 ```
 $ git clone https://github.com/mikesprague/vagrant-railo-tomcat-mysql.git
-$ cd vagrant-railo-tomcat-mysql
+$ cd vagrant-railo-tomcat-mysql/vagrantroot
 $ vagrant up
 ```
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Railo_Tomcat_Nginx_MariaDB_MySQL_Vagrant_v1.2.1
+==> default: Railo_Tomcat_Nginx_MariaDB_MySQL_Vagrant_v1.0.0
 ==> default:
 ==> default: ===============================================================
 ==> default:
-==> default: http://www.vagrant-railo.dev (192.168.50.25)
+==> default: http://www.vagrant-railo.local (192.168.50.25)
 ==> default:
 ==> default: Railo Server/Web Context Administrators
 ==> default:
-==> default: http://www.vagrant-railo.dev/railo-context/admin/server.cfm
-==> default: http://www.vagrant-railo.dev/railo-context/admin/web.cfm
+==> default: http://www.vagrant-railo.local/railo-context/admin/server.cfm
+==> default: http://www.vagrant-railo.local/railo-context/admin/web.cfm
 ==> default: Password (for each admin): password
 ==> default:
 ==> default:
 ==> default: Database Server Connection Info for External Connections
 ==> default: from Host Machine
 ==> default:
-==> default: Server: db.vagrant-railo.dev
+==> default: Server: db.vagrant-railo.local
 ==> default: Port: 3306
 ==> default: User: root
 ==> default: Password: password
@@ -81,12 +80,6 @@ or [http://192.168.50.25/](http://192.168.50.25/)
 
 **NOTE**
 * On Windows (host machines) you should run your terminal as an Administrator; you will also need to make sure your Hosts file isn't set to read-only if you want to take advantage of the hostname functionality. Alternatively, simply use the IP address anywhere you would use the hostname (connecting to database server, etc).
-
----
-
-#### Currently Planned Features
-* [x] Add Nginx install/configuration
-* [x] Add MariaDB as an option for the database server
 
 ---
 

@@ -1,8 +1,8 @@
 server {
 	listen                      80;
 	server_name             	www.railo-vagrant.local railo-vagrant.local;
-	root                        /sites/webroot;
-	index                       index.cfm index.cfml default.cfm default.cfml index.htm index.html default.htm default.html;
+	root                        /var/www/sites/default;
+	index                       index.cfm index.cfml default.cfm default.cfml index.jsp default.jsp index.htm index.html default.htm default.html;
 
 	location ~* \.(cfml?|cfc|jsp)$ {
 		gzip                    on;
@@ -13,6 +13,7 @@ server {
 		gzip_types              text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 		gzip_vary               on;
 		proxy_pass              http://127.0.0.1:8080;
+		proxy_redirect 			off;
 		proxy_read_timeout      180s;
 		proxy_http_version      1.1;
 		proxy_set_header        Host                $host;
@@ -25,7 +26,6 @@ server {
 		proxy_cache_valid       200 302 1m;
 		proxy_cache_valid       404 1m;
 		proxy_cache_use_stale   error timeout invalid_header http_500 http_502 http_503 http_504;
-		proxy_redirect          off;
 		expires                 epoch;
 	}
 

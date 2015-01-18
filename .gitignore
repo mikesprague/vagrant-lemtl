@@ -1,3 +1,4 @@
 .vagrant
 webroot/WEB-INF
 *.sublime-workspace
+*.sublime-project
