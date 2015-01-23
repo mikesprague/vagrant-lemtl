@@ -1,4 +1,6 @@
-# Railo / Tomcat / Nginx / MariaDB (or MySQL) Vagrant Box
+# Vagrant_LEMTR (Linux / Nginx / MariaDB or MySQL / Tomcat / Railo)
+Vagrant box for local development with Java and/or CFML
+
 ##### Last Updated January 23, 2015
 ---
 
@@ -23,10 +25,13 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * Ubuntu Server 14.04 TLS (Trusty Tahr) 64bit
 	* Makes sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set's vm timezone (configure in Vagrantfile)
-* Tomcat 7.0.52 with Java 1.7.0_65
-	* catalina.properties tweaks for improved performance
 * Nginx 1.4.6
 	* set up to serve all static (non-Railo) content and reverse-proxies cfm/cfc/jsp requests to Tomcat
+* MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configure in Vagrantfile)
+	* lower_case_table_names = 1 (disables case sensitivity)
+	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
+* Tomcat 7.0.52 with Java 1.7.0_65
+	* catalina.properties tweaks for improved performance
 * Railo 4.2.2.004
 	* MySQL and Postgres drivers updated to current versions (as of time of writing)
 	* [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
@@ -35,23 +40,20 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 		* Smart whitespace suppression
 		* Preserve single quotes option enabled for dataase queries
 		* Update provider set to Development Releases
-* MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configure in Vagrantfile)
-	* lower_case_table_names = 1 (disables case sensitivity)
-	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 
 ---
 
 ### Installation
 The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working.
 ```
-$ git clone https://github.com/mikesprague/vagrant-railo-tomcat-mysql.git
-$ cd vagrant-railo-tomcat-mysql/vagrantroot
+$ git clone https://github.com/mikesprague/vagrant-lemtr.git
+$ cd vagrant-lemtr/vagrantroot
 $ vagrant up
 ```
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Railo_Tomcat_Nginx_MariaDB_MySQL_Vagrant_v1.0.0
+==> default: Vagrant_LEMTR_v1.0.0
 ==> default:
 ==> default: ===============================================================
 ==> default:
