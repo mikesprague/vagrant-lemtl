@@ -7,8 +7,9 @@ echo $1 | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive t
 
 # a little housekeeping
 echo "... Doing a little housekeeping ..."
-sudo apt-get -y autoremove > /dev/null
 sudo apt-get -y update --fix-missing > /dev/null
+sudo apt-get -y upgrade > /dev/null
+sudo apt-get -y autoremove > /dev/null
 
 echo "... END Set VM timezone and perform some cleanup pre-install."
 echo " "
