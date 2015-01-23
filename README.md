@@ -1,5 +1,5 @@
 # Railo / Tomcat / Nginx / MariaDB (or MySQL) Vagrant Box
-##### Last Updated January 18, 2015
+##### Last Updated January 23, 2015
 ---
 
 ### Prerequisites
@@ -20,12 +20,12 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ---
 
 ### What's Included
-* Ubuntu 14.10 Server (Utopic Unicorn) 64bit
+* Ubuntu Server 14.04 TLS (Trusty Tahr) 64bit
 	* Makes sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set's vm timezone (configure in Vagrantfile)
-* Tomcat 7.0.55 with Java 1.7.0_65
+* Tomcat 7.0.52 with Java 1.7.0_65
 	* catalina.properties tweaks for improved performance
-* Nginx 1.6.2
+* Nginx 1.4.6
 	* set up to serve all static (non-Railo) content and reverse-proxies cfm/cfc/jsp requests to Tomcat
 * Railo 4.2.2.004
 	* MySQL and Postgres drivers updated to current versions (as of time of writing)
