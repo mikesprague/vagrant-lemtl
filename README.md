@@ -1,4 +1,4 @@
-# Vagrant_LEMTR (Linux / Nginx / MariaDB or MySQL / Tomcat / Railo)
+# Vagrant LEMTR (Linux / Nginx / MariaDB or MySQL / Tomcat / Railo)
 Vagrant box for local development with Java and/or CFML
 
 ##### Last Updated January 23, 2015
