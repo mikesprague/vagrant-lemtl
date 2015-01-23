@@ -3,12 +3,12 @@
 
 # server configuration
 vm_ip_address = "192.168.50.25"
-vm_naked_hostname = "railo-vagrant.local"
-vm_www_hostname = "www.railo-vagrant.local"
-vm_sql_hostname = "db.railo-vagrant.local"
+vm_naked_hostname = "vagrant-lemtr.local"
+vm_www_hostname = "www.vagrant-lemtr.local"
+vm_sql_hostname = "db.vagrant-lemtr.local"
 vm_timezone  = "US/Eastern"
 vm_current_version = "v1.0.0"
-vm_name = "Railo_Tomcat_Nginx_MariaDB_MySQL_Vagrant_#{vm_current_version}"
+vm_name = "Vagrant_LEMTR_#{vm_current_version}"
 vm_max_memory = 1024
 vm_num_cpus = 1
 vm_max_host_cpu_cap = "40"
@@ -31,7 +31,7 @@ synced_webroot_group = "vagrant"
 Vagrant.configure("2") do |config|
 	config.vm.box = "ubuntu/trusty64"
 	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
-	config.vm.boot_timeout = 120
+	config.vm.boot_timeout = 180
 
 	config.vm.provider "virtualbox" do |v|
 		# set name of vm

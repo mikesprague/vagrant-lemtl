@@ -1,4 +1,4 @@
-# Vagrant_LEMTR (Linux / Nginx / MariaDB or MySQL / Tomcat / Railo)
+# Vagrant LEMTR (Linux / Nginx / MariaDB or MySQL / Tomcat / Railo)
 Vagrant box for local development with Java and/or CFML
 
 ##### Last Updated January 23, 2015
@@ -57,26 +57,26 @@ Once the Vagrant box finishes and is ready, you should see something like this i
 ==> default:
 ==> default: ===============================================================
 ==> default:
-==> default: http://www.vagrant-railo.local (192.168.50.25)
+==> default: http://www.vagrant-lemtr.local (192.168.50.25)
 ==> default:
 ==> default: Railo Server/Web Context Administrators
 ==> default:
-==> default: http://www.vagrant-railo.local/railo-context/admin/server.cfm
-==> default: http://www.vagrant-railo.local/railo-context/admin/web.cfm
+==> default: http://www.vagrant-lemtr.local/railo-context/admin/server.cfm
+==> default: http://www.vagrant-lemtr.local/railo-context/admin/web.cfm
 ==> default: Password (for each admin): password
 ==> default:
 ==> default:
 ==> default: Database Server Connection Info for External Connections
 ==> default: from Host Machine
 ==> default:
-==> default: Server: db.vagrant-railo.local
+==> default: Server: db.vagrant-lemtr.local
 ==> default: Port: 3306
 ==> default: User: root
 ==> default: Password: password
 ==> default:
 ==> default: ===============================================================
 ```
-Once you see that, you should be able to browse to [http://www.railo-vagrant.local/](http://www.railo-vagrant.local/)
+Once you see that, you should be able to browse to [http://www.vagrant-lemtr.local/](http://www.vagrant-lemtr.local/)
 or [http://192.168.50.25/](http://192.168.50.25/)
 (it may take a few minutes the first time a page loads after bringing your box up, subsequent requests should be much faster).
 

@@ -1,6 +1,6 @@
 server {
 	listen                      80;
-	server_name             	www.railo-vagrant.local railo-vagrant.local;
+	server_name             	www.vagrant-lemtr.local vagrant-lemtr.local;
 	root                        /var/www/sites/default;
 	index                       index.cfm index.cfml default.cfm default.cfml index.jsp default.jsp index.htm index.html default.htm default.html;
 
