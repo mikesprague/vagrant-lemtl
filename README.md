@@ -1,5 +1,5 @@
 # Vagrant LEMTR (Linux / Nginx / MariaDB or MySQL / Tomcat / Railo)
-Vagrant box for local development with Java and/or CFML
+Vagrant box for local development with CFML and Java
 
 ##### Last Updated January 23, 2015
 ---
@@ -23,18 +23,20 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
 ### What's Included
 * Ubuntu Server 14.04 TLS (Trusty Tahr) 64bit
-	* Makes sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
-	* Set's vm timezone (configure in Vagrantfile)
+	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
+	* Set vm timezone (configure in Vagrantfile)
 * Nginx 1.4.6
-	* set up to serve all static (non-Railo) content and reverse-proxies cfm/cfc/jsp requests to Tomcat
+	* Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 * MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configure in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat 7.0.52 with Java 1.7.0_65
 	* catalina.properties tweaks for improved performance
 * Railo 4.2.2.004
-	* MySQL and Postgres drivers updated to current versions (as of time of writing)
+	* MySQL JDBC driver updated to: Connector/J 5.0.8
+	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.3-1102
 	* [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
+		* Apache POI library updated to: 3.1.1-20141221
 	* railo-inst.jar added to javaagent
 	* Tweaks to Railo via server admin
 		* Smart whitespace suppression
@@ -53,7 +55,7 @@ $ vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Vagrant_LEMTR_v1.0.0
+==> default: Vagrant-LEMTR-v1.0.0
 ==> default:
 ==> default: ===============================================================
 ==> default:

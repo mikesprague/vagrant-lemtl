@@ -8,7 +8,7 @@ echo "BEGIN Database server setup ..."
 if [ ! -d "/etc/mysql" ]; then
 	echo "... Importing key, adding MariaDB repo and updating ..."
 	sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db > /dev/null
-	sudo add-apt-repository -y "deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/$4/ubuntu trusty main" > /dev/null
+	sudo add-apt-repository -y "deb http://nyc2.mirrors.digitalocean.com/mariadb/repo/$4/ubuntu $5 main" > /dev/null
 	sudo apt-get update -y > /dev/null
 
 	echo "... Setting MariaDB root user password ..."

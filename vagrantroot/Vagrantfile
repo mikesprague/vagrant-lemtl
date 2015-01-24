@@ -8,10 +8,11 @@ vm_www_hostname = "www.vagrant-lemtr.local"
 vm_sql_hostname = "db.vagrant-lemtr.local"
 vm_timezone  = "US/Eastern"
 vm_current_version = "v1.0.0"
-vm_name = "Vagrant_LEMTR_#{vm_current_version}"
+vm_name = "Vagrant-LEMTR-#{vm_current_version}"
 vm_max_memory = 1024
 vm_num_cpus = 1
 vm_max_host_cpu_cap = "40"
+vm_ubuntu_version_string = "trusty"
 
 # database configuration
 db_server_type = "mariadb" # valid options: "mysql" or "mariadb"
@@ -29,8 +30,8 @@ synced_webroot_group = "vagrant"
 
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "ubuntu/trusty64"
-	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+	config.vm.box = "ubuntu/#{vm_ubuntu_version_string}64"
+	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/#{vm_ubuntu_version_string}/current/#{vm_ubuntu_version_string}-server-cloudimg-amd64-vagrant-disk1.box"
 	config.vm.boot_timeout = 180
 
 	config.vm.provider "virtualbox" do |v|
@@ -71,7 +72,7 @@ Vagrant.configure("2") do |config|
 
 	# install/configure database server
 	config.vm.provision :shell, :path => "bash-scripts/step-5-install-#{db_server_type}.sh", :privileged => true, :args => [
-		db_root_password, db_sql_file_to_import, db_create_database_name, db_mariadb_version
+		db_root_password, db_sql_file_to_import, db_create_database_name, db_mariadb_version, vm_ubuntu_version_string
 	]
 
 	# confirm setup is complete and output connection info
