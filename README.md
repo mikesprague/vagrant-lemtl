@@ -1,7 +1,7 @@
-# Vagrant LEMTR (Linux / Nginx / MariaDB or MySQL / Tomcat / Railo)
+# Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee)
 Vagrant box for local development with CFML and Java
 
-##### Last Updated January 24, 2015
+##### Last Updated January 29, 2015
 ---
 
 ### Prerequisites
@@ -30,15 +30,15 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configure in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
-* Tomcat 7.0.52 with Java 1.7.0_65
+* Tomcat 7.0.52 with Java 1.7.0_75
 	* catalina.properties tweaks for improved performance
-* Railo 4.2.2.004
+* Lucee 4.5.0.042
 	* MySQL JDBC driver updated to: Connector/J 5.0.8
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.3-1102
 	* [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
 		* Apache POI library updated to: 3.1.1-20141221
-	* railo-inst.jar added to javaagent
-	* Tweaks to Railo via server admin
+	* lucee-inst.jar added to javaagent
+	* Tweaks to Lucee via server admin
 		* Smart whitespace suppression
 		* Preserve single quotes option enabled for dataase queries
 		* Update provider set to Development Releases
@@ -48,37 +48,36 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ### Installation
 The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working.
 ```
-$ git clone https://github.com/mikesprague/vagrant-lemtr.git
-$ cd vagrant-lemtr/vagrantroot
-$ vagrant up
+$ git clone https://github.com/mikesprague/vagrant-lemtl.git
+$ cd vagrant-lemtl/vagrantroot && vagrant up
 ```
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Vagrant-LEMTR-v1.0.0
+==> default: Vagrant-LEMTL-v1.0.0
 ==> default:
 ==> default: ===============================================================
 ==> default:
-==> default: http://www.vagrant-lemtr.local (192.168.50.25)
+==> default: http://www.vagrant-lemtl.local (192.168.50.25)
 ==> default:
-==> default: Railo Server/Web Context Administrators
+==> default: Lucee Server/Web Context Administrators
 ==> default:
-==> default: http://www.vagrant-lemtr.local/railo-context/admin/server.cfm
-==> default: http://www.vagrant-lemtr.local/railo-context/admin/web.cfm
+==> default: http://www.vagrant-lemtl.local/lucee/admin/server.cfm
+==> default: http://www.vagrant-lemtl.local/lucee/admin/web.cfm
 ==> default: Password (for each admin): password
 ==> default:
 ==> default:
 ==> default: Database Server Connection Info for External Connections
 ==> default: from Host Machine
 ==> default:
-==> default: Server: db.vagrant-lemtr.local
+==> default: Server: db.vagrant-lemtl.local
 ==> default: Port: 3306
 ==> default: User: root
 ==> default: Password: password
 ==> default:
 ==> default: ===============================================================
 ```
-Once you see that, you should be able to browse to [http://www.vagrant-lemtr.local/](http://www.vagrant-lemtr.local/)
+Once you see that, you should be able to browse to [http://www.vagrant-lemtl.local/](http://www.vagrant-lemtl.local/)
 or [http://192.168.50.25/](http://192.168.50.25/)
 (it may take a few minutes the first time a page loads after bringing your box up, subsequent requests should be much faster).
 

@@ -3,9 +3,9 @@
 
 # server configuration
 vm_ip_address = "192.168.50.25"
-vm_naked_hostname = "vagrant-lemtr.local"
-vm_www_hostname = "www.vagrant-lemtr.local"
-vm_sql_hostname = "db.vagrant-lemtr.local"
+vm_naked_hostname = "vagrant-lemtl.local"
+vm_www_hostname = "www.#{vm_naked_hostname}"
+vm_sql_hostname = "db.#{vm_naked_hostname}"
 vm_timezone  = "US/Eastern"
 vm_current_version = "v1.0.0"
 vm_name = "Vagrant-LEMTR-#{vm_current_version}"
