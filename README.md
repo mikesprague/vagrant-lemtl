@@ -54,7 +54,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Vagrant-LEMTL-v1.0.0
+==> default: Vagrant-LEMTL-v1.1.0
 ==> default:
 ==> default: ===============================================================
 ==> default:
