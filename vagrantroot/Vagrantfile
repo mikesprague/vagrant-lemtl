@@ -62,7 +62,7 @@ Vagrant.configure("2") do |config|
 	# install miscellaneous utilities
 	config.vm.provision :shell, :path => "bash-scripts/step-2-install-utilities.sh", :privileged => true
 
-	# install/configure tomcat and iptables port forwarding (enable hostname/ip access without a port port number in the url)
+	# install/configure tomcat
 	config.vm.provision :shell, :path => "bash-scripts/step-3-install-tomcat.sh", :privileged => true, :args => [
 		vm_name, vm_www_hostname, vm_ip_address, vm_sql_hostname
 	]
