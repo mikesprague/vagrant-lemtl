@@ -1,7 +1,7 @@
 # Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee)
 Vagrant box for local development with CFML and Java
 
-##### Last Updated January 29, 2015
+##### Last Updated January 30, 2015
 ---
 
 ### Prerequisites
