@@ -1,7 +1,7 @@
 # Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee)
 Vagrant box for local development with CFML and Java
 
-##### Last Updated February 05, 2015
+##### Last Updated February 10, 2015
 ---
 
 ### Prerequisites
@@ -22,7 +22,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ---
 
 ### What's Included
-* Ubuntu Server 14.04 TLS (Trusty Tahr) 64bit
+* Ubuntu Server 14.04.1 LTS (Trusty Tahr) 64bit
 	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set vm timezone (configure in Vagrantfile)
 * Nginx 1.4.6
@@ -54,7 +54,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Vagrant-LEMTL-v1.1.1
+==> default: Vagrant-LEMTL-v1.1.2
 ==> default:
 ==> default: ===============================================================
 ==> default:
