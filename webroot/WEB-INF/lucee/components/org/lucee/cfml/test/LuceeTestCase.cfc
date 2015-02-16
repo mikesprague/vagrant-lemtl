@@ -16,6 +16,6 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  * 
  **/
-component extends="testbox.system.testing.compat.framework.TestCase"	{
+component extends="testbox.system.compat.framework.TestCase"	{
 	
 }

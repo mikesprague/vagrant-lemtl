@@ -34,6 +34,7 @@ component {
 		 "colors": {
 			 "array":          { "dark": "##9c3", "light": "##cf3" }
 			,"component":      { "dark": "##9c9", "light": "##cfc" }
+			,"function":       { "dark": "##c6F", "light": "##fcf" }
 			,"mongo":          { "dark": "##393", "light": "##966" }
 			,"object":         { "dark": "##c99", "light": "##fcc" }
 			,"javaobject":     { "dark": "##c99", "light": "##fcc" }
@@ -48,10 +49,10 @@ component {
 			,"privatemethods": { "dark": "##fc3", "light": "##f96" }
 		}
 		,"styles": {
-			 ".table-dump"   : "font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 11px; background-color: ##EEE; color: ##000; border-spacing: 1px; border-collapse:separate;"
-			,".border"       : "border: 1px solid ##000; padding: 0.2em;"
+			 ".table-dump"    : "font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 11px; color: ##000; border-spacing: 1px; border-collapse:separate;"
+			,".border"        : "border: 1px solid ##000; padding: 0.2em;"
 			,".border.rlabel" : "margin: 1px 1px 0px 1px; vertical-align: top; text-align: left;"
-			,".query-reset"  : "background: url(data:image/gif;base64,R0lGODlhCQAJAIABAAAAAP///yH5BAEAAAEALAAAAAAJAAkAAAIRhI+hG7bwoJINIktzjizeUwAAOw==) no-repeat; height:18px; background-position:2px 4px; background-color: ##969;"
+			,".query-reset"   : "background: url(data:image/gif;base64,R0lGODlhCQAJAIABAAAAAP///yH5BAEAAAEALAAAAAAJAAkAAAIRhI+hG7bwoJINIktzjizeUwAAOw==) no-repeat; height:18px; background-position:2px 4px; background-color: ##969;"
 		}
 	};
 
@@ -262,10 +263,17 @@ You can use your custom style by creating a corresponding file in the lucee/dump
 
 			local.comment = structKeyExists(arguments.meta,'comment') ? "<br>" & replace(HTMLEditFormat(arguments.meta.comment),chr(10),' <br>','all') : '';
 
-			// systemOutput(arguments.meta.type & ' > ' & arguments.meta.title & ' > ' & title, true);
+			local.cssClass = simpleType;
+
+			if (arguments.meta.type == "function")
+				cssClass = arguments.meta.type;
+
+// systemOutput(arguments.meta.type & ' > ' & arguments.meta.title & ' > ' & title, true);
 			arrayAppend(variables.aOutput, '<tr class="base-header" #fontStyle# onClick="dump_toggle(this, false)">');
 
-			arrayAppend(variables.aOutput, '<td class="border bold bgd-#simpleType# pointer" colspan="#columnCount#"><span class="nowrap">#arguments.meta.title#</span>');
+// systemOutput(arguments.meta.keyList(), true);
+// systemOutput("	arguments.meta.type: " & arguments.meta.type, true);
+			arrayAppend(variables.aOutput, '<td class="border bold bgd-#cssClass# pointer" colspan="#columnCount#"><span class="nowrap">#arguments.meta.title#</span>');
 
 			arrayAppend(variables.aOutput, '<span class="nobold"><span class="nowrap">#comment#</span></span></td>');
 			arrayAppend(variables.aOutput, '</tr>');
@@ -646,6 +654,9 @@ function dump_resetColumns(oObj, iCol) {
 			result = "simple";
 		else if (result CT '.')
 			result = listLast(result, '.');
+
+		if (result.right(4) == "impl")
+			result = left(result, len(result) - 4);
 
 		return result;
 	}

@@ -28,8 +28,8 @@
 	* @options.hint A structure of options this reporter needs to build the report with
 	*/
 	any function runReport( 
-		required testbox.system.testing.TestResult results,
-		required testbox.system.testing.TestBox testbox,
+		required testbox.system.TestResult results,
+		required testbox.system.TestBox testbox,
 		struct options={}
 	){
 		// content type
@@ -59,8 +59,8 @@
 	
 	<!--- TODO this is just a temporary solution, make better! --->
 	<cffunction name="html" access="private" localmode="modern">
-		<cfargument name="results" type="testbox.system.testing.TestResult">
-		<cfargument name="testbox" type="testbox.system.testing.TestBox">
+		<cfargument name="results" type="testbox.system.TestResult">
+		<cfargument name="testbox" type="testbox.system.TestBox">
 		<cfargument name="options" type="struct">
 		<cfargument name="baseURL" type="string">
 

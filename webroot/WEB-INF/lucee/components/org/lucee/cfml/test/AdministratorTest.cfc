@@ -17,7 +17,7 @@
  * 
  **/
 
-component extends="mxunit.framework.TestCase"	{
+component extends="org.lucee.cfml.test.LuceeTestCase"	{
 
 	public function setUp(){
 		variables.admin=new org.lucee.cfml.Administrator("web","server");
