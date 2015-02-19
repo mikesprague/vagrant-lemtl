@@ -121,7 +121,21 @@ component output="false" {
 	*/
 	public void function onError(required any Exception, required string EventName) {
 
-		return;
-	}
+			savecontent variable="errorOutput" {
+				writeOutput( "#cgi.request_url#<br><br>" );
+				dump( var="#arguments.eventname#",label="Event Name",format="html" );
+				dump( var="#arguments.exception#",label="Exception",format="html" );
+				dump( var="#client#",label="Client",format="html" );
+				dump( var="#session#",label="Session",format="html" );
+				dump( var="#request#",label="Request",format="html" );
+				dump( var="#form#",label="Form",format="html" );
+				dump( var="#url#",label="URL",format="html" );
+				dump( var="#cgi#",label="CGI",format="html" );
+			}
+
+			writeOutput( errorOutput );
+
+			return;
+		}
 
 }
