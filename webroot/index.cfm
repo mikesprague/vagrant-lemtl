@@ -1,3 +1,4 @@
+<cfspreadsheet action="read" src="#expandPath( 'test.xlsx' )#" query="qTestXslx">
 <cfscript>
 	qAllArtists = queryExecute(
 		"
@@ -8,7 +9,8 @@
 		{ datasource = "cfartgallery" }
 	);
 
-	dump( qAllArtists )
+	dump( qAllArtists );
+	dump( qTestXslx );
 	dump( cgi );
 	dump( client );
 	dump( server );
