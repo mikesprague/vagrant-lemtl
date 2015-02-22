@@ -1,7 +1,7 @@
 # Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee)
 Vagrant box for local development with CFML and Java
 
-##### Last Updated February 16, 2015
+##### Last Updated February 22, 2015
 ---
 
 ### Prerequisites
@@ -35,7 +35,8 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * Lucee 4.5.1.004
 	* MySQL JDBC driver updated to: Connector/J 5.0.8
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.3-1102
-	* [cfspreadsheet](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
+	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
+		* Many thanks to Andrew Kretzer for his work updating [cfspreadsheet-railo](https://github.com/teamcfadvance/cfspreadsheet-railo) for Lucee compatibility
 		* Apache POI library updated to: 3.1.1-20141221
 	* lucee-inst.jar added to javaagent
 	* Tweaks to Lucee via server admin
@@ -54,7 +55,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```
-==> default: Vagrant-LEMTL-v1.1.3
+==> default: Vagrant-LEMTL-v1.2.0
 ==> default:
 ==> default: ===============================================================
 ==> default:
@@ -98,7 +99,6 @@ Help with Nginx config from the following blog post by [Yuri Vorontsov](http://w
 ---
 
 ## License
-```
 The MIT License (MIT)
 
 Copyright (c) 2015 Mike Sprague
@@ -120,4 +120,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
