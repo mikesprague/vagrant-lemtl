@@ -19,7 +19,7 @@
 	<cfset variables._SUPPORTED_JSLIB = 'jquery' />
 	<cfset variables.supported_types = 'tab' />	
 	<cfset variables.children = [] />
-	<cfset variables.instance.ajaxBinder = createObject('component','railo.core.ajax.AjaxBinder').init() />
+	<cfset variables.instance.ajaxBinder = createObject('component','lucee.core.ajax.AjaxBinder').init() />
 	
 	<!--- Meta data --->
 	<cfset this.metadata.attributetype="fixed">
