@@ -1,7 +1,7 @@
 # Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee)
 Vagrant box for local development with CFML and Java
 
-##### Last Updated February 22, 2015
+##### Last Updated February 24, 2015
 ---
 
 ### Prerequisites
@@ -32,7 +32,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat 7.0.52 with Java 1.7.0_75
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.1.004
+* Lucee 4.5.1.006
 	* MySQL JDBC driver updated to: Connector/J 5.0.8
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.3-1102
 	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
