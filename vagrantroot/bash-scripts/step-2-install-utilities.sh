@@ -6,9 +6,8 @@ echo "BEGIN installing utilities"
 
 # install some common utilities
 if [ ! -f /var/log/utils_installed ]; then
-	echo "... Installing miscellaneous utilities ..."
+	echo "... Installing miscellaneous/common utilities ..."
 
-	sudo apt-get update -y > /dev/null
 	sudo apt-get -qq install wget > /dev/null
 	sudo apt-get -qq install curl > /dev/null
 	sudo apt-get -qq install zip > /dev/null

@@ -6,11 +6,11 @@ echo "BEGIN installing and configuring nginx ..."
 
 #install nginx
 if [ ! -d "/etc/nginx" ]; then
-	echo "... Updating repos and installing nginx ..."
-	sudo apt-get update -y > /dev/null
+	echo "... Installing nginx ..."
 	sudo apt-get -qq install nginx > /dev/null
 fi
 
+echo "... Configuring nginx ..."
 # copy our modified nginx default site config to the vm
 sudo cp /vagrant/configs/nginx-default /etc/nginx/sites-available/default
 

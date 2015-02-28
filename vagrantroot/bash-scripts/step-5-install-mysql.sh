@@ -5,8 +5,6 @@ echo " "
 echo "BEGIN Database server setup ..."
 
 if [ ! -d "/etc/mysql" ]; then
-	sudo apt-get -y update > /dev/null
-
 	echo "... Setting MySQL root user password ..."
 	sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $1"
 	sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $1"

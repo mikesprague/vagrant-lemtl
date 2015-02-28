@@ -7,11 +7,10 @@ echo "BEGIN setting up Tomcat"
 # install tomcat7
 if [ ! -d "/etc/tomcat7" ]; then
 	echo "... Installing Tomcat (grab a cup of coffee, this may take a few minutes) ..."
-
-	sudo apt-get update -y > /dev/null
 	sudo apt-get -qq install tomcat7 > /dev/null
 fi
 
+echo "... Configuring Tomcat ..."
 # copy modified server.xml to the vm
 sudo cp /vagrant/configs/server.xml /etc/tomcat7/server.xml
 # copy modified catalina.properties to the vm
