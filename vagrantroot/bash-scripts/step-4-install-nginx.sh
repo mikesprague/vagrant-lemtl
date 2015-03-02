@@ -6,8 +6,11 @@ echo "BEGIN installing and configuring nginx ..."
 
 #install nginx
 if [ ! -d "/etc/nginx" ]; then
+	echo "Applying nginx/development repo and updating packages ..."
+	sudo apt-add-repository -y ppa:nginx/development > /dev/null
+	sudo apt-get -y update > /dev/null
 	echo "... Installing nginx ..."
-	sudo apt-get -qq install nginx > /dev/null
+	sudo apt-get -y install nginx > /dev/null
 fi
 
 echo "... Configuring nginx ..."

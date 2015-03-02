@@ -7,7 +7,7 @@ echo "BEGIN setting up Tomcat"
 # install tomcat7
 if [ ! -d "/etc/tomcat7" ]; then
 	echo "... Installing Tomcat (grab a cup of coffee, this may take a few minutes) ..."
-	sudo apt-get -qq install tomcat7 > /dev/null
+	sudo apt-get -y install tomcat7 > /dev/null
 fi
 
 echo "... Configuring Tomcat ..."

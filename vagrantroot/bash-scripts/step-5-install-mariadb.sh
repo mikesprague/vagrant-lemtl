@@ -17,7 +17,7 @@ if [ ! -d "/etc/mysql" ]; then
 
 	echo "... Installing MariaDB Server ..."
 	# install mariadb (-qq implies -y --force-yes)
-	sudo apt-get install -qq mariadb-server > /dev/null
+	sudo apt-get install -y mariadb-server > /dev/null
 
 	# make mysql available to connect to from outside world without ssh tunnel
 	# copy file with above changes and the lower_case_table_names = 1 flag set to

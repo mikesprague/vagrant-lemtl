@@ -11,7 +11,7 @@ if [ ! -d "/etc/mysql" ]; then
 
 	echo "... Installing MySQL Server ..."
 	# install mysql (-qq implies -y --force-yes)
-	sudo apt-get install -qq mysql-server > /dev/null
+	sudo apt-get install -y mysql-server > /dev/null
 
 	# make mysql available to connect to from outside world without ssh tunnel
 	# copy file with above changes and the lower_case_table_names = 1 flag set to

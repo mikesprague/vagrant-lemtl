@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# some final housekeeping
+sudo apt-get -y update --fix-missing > /dev/null
+sudo apt-get -y autoremove > /dev/null
+sudo apt-get -y clean > /dev/null
+
 echo " "
 echo "$1"
 echo " "
