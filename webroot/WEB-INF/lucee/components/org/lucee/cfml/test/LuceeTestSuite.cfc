@@ -16,7 +16,7 @@
  * License along with this library.  If not, see <http://www.gnu.org/licenses/>.
  * 
  ---><cfscript>
-component extends="testbox.system.testing.compat.framework.TestSuite" {
+component extends="testbox.system.compat.framework.TestSuite" {
 	
 	/**
 	* adding n testcases by defining a package that hold testcases 
@@ -80,7 +80,10 @@ component extends="testbox.system.testing.compat.framework.TestSuite" {
 	}*/
     
     private boolean function isTestCase(required component cfc) {
-    	return isInstanceof(cfc,'mxunit.framework.TestCase') || isInstanceof(cfc,'testbox.system.testing.compat.framework.TestCase');
+    	return isInstanceof(cfc,'mxunit.framework.TestCase') 
+    		|| isInstanceof(cfc,'testbox.system.testing.compat.framework.TestCase')
+    		|| isInstanceof(cfc,'testbox.system.compat.framework.TestCase');
+    		
     }
 
 }
