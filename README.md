@@ -1,7 +1,7 @@
 # Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee) #
 Vagrant box for local development with CFML and Java
 
-##### Last Updated April 20, 2015 #####
+##### Last Updated May 1, 2015 #####
 ---
 
 ### Prerequisites ###
@@ -32,7 +32,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat 7.0.52 with Java 1.7.0_75
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.1.011
+* Lucee 4.5.1.013
 	* MySQL JDBC driver updated to: Connector/J 5.0.8
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.3-1102
 	* [cfspreadsheet-railo](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
@@ -48,14 +48,14 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
 ### Installation ###
 The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working.
-```
+```bash
 $ git clone https://github.com/mikesprague/vagrant-lemtl.git
 $ cd vagrant-lemtl/vagrantroot && vagrant up
 ```
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
-```
-==> default: Vagrant-LEMTL-v1.2.5
+```bash
+==> default: Vagrant-LEMTL-v1.2.6
 ==> default:
 ==> default: ===============================================================
 ==> default:
