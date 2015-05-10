@@ -1,18 +1,18 @@
-# Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee) #
+# Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee)
 Vagrant box for local development with CFML and Java
 
-##### Last Updated May 1, 2015 #####
+##### Last Updated May 9, 2015
 ---
 
-### Prerequisites ###
+### Prerequisites
 NOTE: All version numbers used in this document are confirmed to work, and are current, as of the time of this writing
 
-#### Required ####
+#### Required
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
 * [Virtual Box and Virtual Box Guest Additions](https://www.virtualbox.org/wiki/Downloads) (4.3.26)
 * [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.2)
 
-#### Highly Recommended ####
+#### Highly Recommended
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
 * [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v0.0.11).
 ```$ vagrant plugin install vagrant-hostsupdater```
@@ -21,7 +21,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
 ---
 
-### What's Included ###
+### What's Included
 * Ubuntu Server 14.04.2 LTS (Trusty Tahr) 64bit
 	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set vm timezone (configure in Vagrantfile)
@@ -30,9 +30,9 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configure in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
-* Tomcat 7.0.52 with Java 1.7.0_75
+* Tomcat 7.0.52 with Java 1.7.0_79
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.1.013
+* Lucee 4.5.1.015
 	* MySQL JDBC driver updated to: Connector/J 5.0.8
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.3-1102
 	* [cfspreadsheet-railo](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
@@ -46,7 +46,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
 ---
 
-### Installation ###
+### Installation
 The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working.
 ```bash
 $ git clone https://github.com/mikesprague/vagrant-lemtl.git
@@ -55,7 +55,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.2.6
+==> default: Vagrant-LEMTL-v1.2.7
 ==> default:
 ==> default: ===============================================================
 ==> default:
@@ -87,7 +87,7 @@ or [http://192.168.50.25/](http://192.168.50.25/)
 
 ---
 
-#### References ####
+#### References
 The following two posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/) in September, 2014, heavily influenced this project:
 * [Easy Railo App Development with Vagrant](http://blog.cmdbase.io/easy-railo-development-with-vagrant/)
 * [Saving Railo Configurations](http://blog.cmdbase.io/saving-railo-configurations/)
@@ -98,7 +98,7 @@ Help with Nginx config from the following blog post by [Yuri Vorontsov](http://w
 
 ---
 
-## License ##
+## License
 The MIT License (MIT)
 
 Copyright (c) 2015 Mike Sprague
