@@ -22,7 +22,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ---
 
 ### What's Included
-* Ubuntu Server 14.04.2 LTS (Trusty Tahr) 64bit
+* Ubuntu Server 15.04 (Vivid Vervet) 64bit
 	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set vm timezone (configure in Vagrantfile)
 * Nginx 1.7.12
@@ -30,7 +30,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configure in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
-* Tomcat 7.0.52 with Java 1.7.0_79
+* Tomcat 7.0.56 with Java 1.7.0_79
 	* catalina.properties tweaks for improved performance
 * Lucee 4.5.1.015
 	* MySQL JDBC driver updated to: Connector/J 5.0.8
@@ -82,8 +82,9 @@ Once you see that, you should be able to browse to [http://www.vagrant-lemtl.loc
 or [http://192.168.50.25/](http://192.168.50.25/)
 (it may take a few minutes the first time a page loads after bringing your box up, subsequent requests should be much faster).
 
-**NOTE**
+**NOTES**
 * On Windows (host machines) you should run your terminal as an Administrator; you will also need to make sure your Hosts file isn't set to read-only if you want to take advantage of the hostname functionality. Alternatively, simply use the IP address anywhere you would use the hostname (connecting to database server, etc).
+* [Git Large File Storage (Git LFS)](https://git-lfs.github.com/) enabled via the .gitattributes file for .jar and .lco files by default. This should not cause any issues if you do not have Git LFS installed/enabled. If it does, please report them in the issue tracker.
 
 ---
 
