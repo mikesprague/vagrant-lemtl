@@ -12,10 +12,10 @@ vm_name = "Vagrant-LEMTL-#{vm_current_version}"
 vm_max_memory = 1024
 vm_num_cpus = 1
 vm_max_host_cpu_cap = "30"
-vm_ubuntu_version_string = "trusty"
+vm_ubuntu_version_string = "vivid" # "precise" | "trusty" | "utopic" | "vivid"
 
 # database configuration
-db_server_type = "mariadb" # valid options: "mysql" or "mariadb"
+db_server_type = "mariadb" # "mysql" | "mariadb"
 db_mariadb_version = "10.0"
 db_root_password = "password"
 db_create_database_name = "cfartgallery"
@@ -51,6 +51,7 @@ Vagrant.configure("2") do |config|
 	end
 
 	# set vm ip address and add auto_correct on forwarded port so it doesn't collide with other vagrant boxes
+	# config.vm.network :private_network, type: "dhcp"
 	config.vm.network :private_network, ip: vm_ip_address
 	# config.vm.network :forwarded_port, guest: 22, host: 2223, auto_correct: true
 
