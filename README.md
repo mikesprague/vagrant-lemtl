@@ -25,9 +25,10 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * Ubuntu Server 15.04 (Vivid Vervet) 64bit
 	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set vm timezone (configure in Vagrantfile)
+	* NOTE: Tested and working with Ubuntu 12.04, 14.04, 14.10, 15.04 (configurable via Vagrantfile)
 * Nginx 1.7.12
 	* Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
-* MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configure in Vagrantfile)
+* MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configurable in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat 7.0.56 with Java 1.7.0_79
