@@ -1,7 +1,7 @@
 # Vagrant LEMTL (Linux / Nginx / MariaDB or MySQL / Tomcat / Lucee)
 Vagrant box for local development with CFML and Java
 
-##### Last Updated May 18, 2015
+##### Last Updated June 3, 2015
 ---
 
 ### Prerequisites
@@ -18,6 +18,9 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ```$ vagrant plugin install vagrant-hostsupdater```
 * [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.0).
 ```$ vagrant plugin install vagrant-vbguest```
+* [vagrant-winnfsd](https://github.com/GM-Alex/vagrant-winnfsd) (v1.0.11).
+```$ vagrant plugin install vagrant-winnfsd```
+(*For Windows host machines that want to use NFS*)
 
 ---
 
@@ -33,7 +36,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat 7.0.56 with Java 1.7.0_79
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.1.015
+* Lucee 4.5.1.0120
 	* MySQL JDBC driver updated to: Connector/J 5.0.8
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.3-1102
 	* [cfspreadsheet-railo](https://github.com/teamcfadvance/cfspreadsheet-railo) pre-installed
@@ -56,7 +59,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.3.0
+==> default: Vagrant-LEMTL-v1.3.1
 ==> default:
 ==> default: ===============================================================
 ==> default:
@@ -85,7 +88,7 @@ or [http://192.168.50.25/](http://192.168.50.25/)
 
 **NOTES**
 * On Windows (host machines) you should run your terminal as an Administrator; you will also need to make sure your Hosts file isn't set to read-only if you want to take advantage of the hostname functionality. Alternatively, simply use the IP address anywhere you would use the hostname (connecting to database server, etc).
-* [Git Large File Storage (Git LFS)](https://git-lfs.github.com/) enabled via the .gitattributes file for .jar and .lco files by default. This should not cause any issues if you do not have Git LFS installed/enabled. If it does, please report them in the issue tracker.
+* [Git Large File Storage (Git LFS)](https://git-lfs.github.com/) enabled via the .gitattributes file for .jar and .lco files by default. This should not cause any issues if you do not have Git LFS installed/enabled. If you don't have Git LFS installed locally (or enabled on your GitHub account), it should just ignore the attributes. If there are any problems, please report them in the issue tracker.
 
 ---
 
