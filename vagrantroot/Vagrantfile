@@ -89,6 +89,6 @@ Vagrant.configure("2") do |config|
 		config.vm.synced_folder synced_webroot_local, synced_webroot_box, :id => synced_webroot_id, :type => "nfs"
 	else
 		# add standard synced folder
-		config.vm.synced_folder synced_webroot_local, synced_webroot_box, :id => synced_webroot_id, :owner => synced_webroot_owner, :group => synced_webroot_group
+		config.vm.synced_folder synced_webroot_local, synced_webroot_box, :id => synced_webroot_id, :owner => synced_webroot_owner, :group => synced_webroot_group, :mount_options => ['dmode=777', 'fmode=666']
 	end
 end
