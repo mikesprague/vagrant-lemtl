@@ -16,9 +16,9 @@
 				//create the loader
 				local.paths = arrayNew(1);
 				// This points to the jar we want to load. Could also load a directory of .class files
-				arrayAppend(Local.paths, expandPath('{lucee-web-directory}'&'/lib/poi-3.11-20141221.jar'));
-				arrayAppend(Local.paths, expandPath('{lucee-web-directory}'&'/lib/poi-ooxml-3.11-20141221.jar'));
-				arrayAppend(Local.paths, expandPath('{lucee-web-directory}'&'/lib/poi-ooxml-schemas-3.11-20141221.jar'));
+				arrayAppend(Local.paths, expandPath('{lucee-web-directory}'&'/lib/poi-3.12-20150511.jar'));
+				arrayAppend(Local.paths, expandPath('{lucee-web-directory}'&'/lib/poi-ooxml-3.12-20150511.jar'));
+				arrayAppend(Local.paths, expandPath('{lucee-web-directory}'&'/lib/poi-ooxml-schemas-3.12-20150511.jar'));
 				if ( !this.isLinux() ) {
 					arrayAppend(Local.paths, expandPath('{lucee-web-directory}'&'/lib/ooxml-lib/dom4j-1.6.1.jar'));
 				}
