@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!-- copy from Railo context --><cfLuceeConfiguration hspw="d65fbec83110f91519b3485759cfb13ee24bdbb5640ee4680c03f15b4bc16b86" pw="f76d0a69568e8afa331cc07973d31292f73500ec941a12614c22c16b0e5f7140" salt="1714DD27-3C96-422B-AB3BEB2D595511F0" version="4.2"><cfabort/>
+<?xml version="1.0" encoding="UTF-8"?><!-- copy from Railo context --><cfLuceeConfiguration hspw="d65fbec83110f91519b3485759cfb13ee24bdbb5640ee4680c03f15b4bc16b86" pw="f76d0a69568e8afa331cc07973d31292f73500ec941a12614c22c16b0e5f7140" salt="1714DD27-3C96-422B-AB3BEB2D595511F0" version="4.5"><cfabort/>
 
 <!-- 
 Path placeholders:
@@ -212,4 +212,4 @@ for every argument defined railo tries to call a matching setter method
 		<logger appender="resource" appender-arguments="path:{lucee-config}/logs/application.log" layout="classic" level="info" name="application"/>
 		<logger appender="resource" appender-arguments="path:{lucee-config}/logs/exception.log" layout="classic" level="info" name="exception"/>	
 	</logging>		
-<rest/><gateways/><orm/></cfLuceeConfiguration>
+<rest/><gateways/><orm/><datasource/></cfLuceeConfiguration>
