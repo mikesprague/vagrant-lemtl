@@ -1,8 +1,9 @@
 server {
 	listen                      80;
-	server_name             	www.vagrant-lemtr.local vagrant-lemtr.local;
+	server_name	                www.vagrant-lemtr.local vagrant-lemtr.local;
 	root                        /var/www/sites/default;
 	index                       index.cfm index.cfml default.cfm default.cfml index.jsp default.jsp index.htm index.html default.htm default.html;
+	sendfile                    off;
 
 	location ~* \.(cfml?|cfc|jsp)$ {
 		gzip                    on;
@@ -13,7 +14,7 @@ server {
 		gzip_types              text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 		gzip_vary               on;
 		proxy_pass              http://127.0.0.1:8080;
-		proxy_redirect 			off;
+		proxy_redirect			off;
 		proxy_read_timeout      180s;
 		proxy_http_version      1.1;
 		proxy_set_header        Host                $host;
