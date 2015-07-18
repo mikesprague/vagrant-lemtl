@@ -11,8 +11,8 @@ vm_current_version = "v1.4.0"
 vm_name = "Vagrant-LEMTL-#{vm_current_version}"
 vm_max_memory = 1024
 vm_num_cpus = 1
-vm_max_host_cpu_cap = "30"
-vm_ubuntu_version_string = "vivid" # "precise" (12.04) | "trusty" (14.04) | "utopic" (14.10) | "vivid" (15.04)
+vm_max_host_cpu_cap = "33"
+vm_ubuntu_version_string = "trusty" # "precise" (12.04) | "trusty" (14.04) | "utopic" (14.10) | "vivid" (15.04)
 
 # database configuration
 db_server_type = "mariadb" # "mysql" | "mariadb"
@@ -24,15 +24,11 @@ db_sql_file_to_import = "data/cfartgallery.sql"
 # synced folder configuration
 synced_webroot_local = "../webroot/"
 synced_webroot_box = "/var/www/sites/default"
-synced_webroot_id = "vagrant-webroot"
-synced_webroot_owner = "vagrant"
-synced_webroot_group = "vagrant"
 
 Vagrant.configure("2") do |config|
 	config.vm.box = "ubuntu/#{vm_ubuntu_version_string}64"
 	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/#{vm_ubuntu_version_string}/current/#{vm_ubuntu_version_string}-server-cloudimg-amd64-vagrant-disk1.box"
 	config.vm.boot_timeout = 180
-
 	config.vm.network :private_network, ip: vm_ip_address, auto_correct: true
 	config.vm.synced_folder synced_webroot_local, synced_webroot_box, :nfs => { :mount_options => ["dmode=777","fmode=666"] }
 
