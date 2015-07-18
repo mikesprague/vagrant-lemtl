@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated July 5, 2015
+##### Last Updated July 17, 2015
 ---
 
 ### Prerequisites
@@ -9,8 +9,9 @@ NOTE: All version numbers used in this document are confirmed to work, and are c
 
 #### Required
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
-* [Virtual Box and Virtual Box Guest Additions](https://www.virtualbox.org/wiki/Downloads) (4.3.28)
-* [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.2)
+* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (5.0)
+* [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.4)
+* **IMPORTANT NOTE:** If you're on Windows (not sure about other OSs) and you are running Virtual Box 5.0 (or want to) then you **MUST** install Vagrant v1.7.4; there are known bugs/issues with Vagrant v1.7.3 and below when used with Virtual Box 5.0. If you choose to stick with a 4.x version of Virtual Box I recommend using [v4.3.30](https://www.virtualbox.org/wiki/Download_Old_Builds_4_3) (plus matching [extension pack](http://download.virtualbox.org/virtualbox/4.3.30/Oracle_VM_VirtualBox_Extension_Pack-4.3.30-101610.vbox-extpack)) with [Vagrant v1.7.2](https://www.vagrantup.com/download-archive/v1.7.2.html)
 
 #### Highly Recommended
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
@@ -25,7 +26,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ---
 
 ### What's Included
-* Ubuntu Server 15.04 (Vivid Vervet) 64bit
+* Ubuntu Server 14.04 (Trusty Tahr) 64bit
 	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set vm timezone (configure in Vagrantfile)
 	* NOTE: Tested and working with Ubuntu 12.04, 14.04, 14.10, 15.04 (configurable via Vagrantfile)
@@ -34,9 +35,9 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configurable in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
-* Tomcat 7.0.56 with Java 1.7.0_79
+* Tomcat 7.0.52 with Java 1.7.0_79
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.1.022
+* Lucee 4.5.2.000
 	* MySQL JDBC driver updated to: Connector/J 5.1.36
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.4-1201
 	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
@@ -53,13 +54,13 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ### Installation
 The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working (the Linux updates, on first run, can take a while).
 ```bash
-$ git clone https://github.com/mikesprague/vagrant-lemtl.git
+$ git clone https://github.com/writecodedrinkcoffee/vagrant-lemtl.git
 $ cd vagrant-lemtl/vagrantroot && vagrant up
 ```
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.4.0
+==> default: Vagrant-LEMTL-v1.5.0
 ==> default:
 ==> default: ===============================================================
 ==> default:
