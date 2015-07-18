@@ -1,4 +1,8 @@
-.vagrant
-webroot/WEB-INF
 *.sublime-workspace
 *.sublime-project
+.vagrant
+webroot/WEB-INF
+webroot/*
+!webroot/Application.cfc
+!webroot/index.cfm
+!webroot/test.xslx
