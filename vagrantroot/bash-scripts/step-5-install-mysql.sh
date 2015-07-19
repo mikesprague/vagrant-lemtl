@@ -31,11 +31,6 @@ if [ -f /vagrant/$2 ]; then
 	echo "SOURCE /vagrant/$2;" | mysql -uroot -p$1 -f -D $3
 fi
 
-# create databases used for railo client and session storage
-echo "... Creating databases for Railo's session and client storage ..."
-echo "CREATE DATABASE IF NOT EXISTS railo_client;" | mysql -uroot -p$1
-echo "CREATE DATABASE IF NOT EXISTS railo_session;" | mysql -uroot -p$1
-
 # grant all privileges to mysql root user (from all hosts) on all databases
 echo "GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '$1' WITH GRANT OPTION;" | mysql -uroot -p$1
 echo "FLUSH PRIVILEGES;" | mysql -uroot -p$1

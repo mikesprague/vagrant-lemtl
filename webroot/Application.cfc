@@ -10,12 +10,12 @@ component output="false" {
 	this.sessionManagement = true;
 	this.sessionTimeout = createTimeSpan( 0, 0, 30, 0 );
 	this.sessionType = "j2ee";
-	this.sessionStorage = "railo_session";
+	this.sessionStorage = "cookie";
 	this.sessioncookie.httponly = true;
 	this.sessioncookie.secure = true;
 	this.loginStorage = "session";
 	this.clientManagement = true;
-	this.clientStorage = "railo_client";
+	this.clientStorage = "cookie";
 	this.setClientCookies = true;
 	this.setDomainCookies = true;
 	this.scriptProtect = true;
@@ -25,22 +25,6 @@ component output="false" {
 		, connectionString: "jdbc:mysql://localhost:3306/cfartgallery?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
 		, username: "root"
 		, password: "password"
-	};
-
-	this.datasources[ "railo_client" ] = {
-		class: "org.gjt.mm.mysql.Driver"
-		, connectionString: "jdbc:mysql://localhost:3306/railo_client?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
-		, username: "root"
-		, password: "password"
-		, storage: true
-	};
-
-	this.datasources[ "railo_session" ] = {
-		class: "org.gjt.mm.mysql.Driver"
-		, connectionString: "jdbc:mysql://localhost:3306/railo_session?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
-		, username: "root"
-		, password: "password"
-		, storage: true
 	};
 
 	/**
