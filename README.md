@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated July 17, 2015
+##### Last Updated July 18, 2015
 ---
 
 ### Prerequisites
@@ -60,7 +60,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.5.0
+==> default: Vagrant-LEMTL-v1.5.1
 ==> default:
 ==> default: ===============================================================
 ==> default:
