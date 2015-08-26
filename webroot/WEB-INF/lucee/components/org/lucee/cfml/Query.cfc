@@ -108,16 +108,23 @@ component output="false" extends="Base" accessors="true"{
 			// If colon found outside a string, check if named param.
 			elseif (NextChar EQ ':')
 			{
-				var Match = refind( ':\w+' , Sql , Pos , true ) ;
-				if (ArrayLen(Match.Pos) and Match.Pos[1] EQ Pos)
-				{
-					result.add( findNamedParam(namedParams, Mid(Sql,Match.Pos[1]+1,Match.Len[1]-1) ) ) ;
-					Pos += Match.Len[1] ;
-				}
-				else
-				{
+				var Match = refind( '::' , Sql , Pos , true )
+				if (Match.Len[1] eq 2){
 					result.add({type='String',value=':'})
-					Pos += 1;
+						Pos += 2;
+				}
+				else{
+					var Match = refind( ':\w+' , Sql , Pos , true ) ;
+					if (ArrayLen(Match.Pos) and Match.Pos[1] EQ Pos)
+					{
+						result.add( findNamedParam(namedParams, Mid(Sql,Match.Pos[1]+1,Match.Len[1]-1) ) ) ;
+						Pos += Match.Len[1] ;
+					}
+					else
+					{
+						result.add({type='String',value=':'})
+						Pos += 1;
+					}
 				}
 			}
 			// If question mark found outside a string, assume unnamed param.
