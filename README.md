@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated July 18, 2015
+##### Last Updated August 25, 2015
 ---
 
 ### Prerequisites
@@ -12,6 +12,7 @@ It is assumed you have Virtual Box and Vagrant installed. If not, then grab the 
 * [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (5.0)
 * [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.4)
 * **IMPORTANT NOTE:** If you're on Windows (not sure about other OSs) and you are running Virtual Box 5.0 (or want to) then you **MUST** install Vagrant v1.7.4; there are known bugs/issues with Vagrant v1.7.3 and below when used with Virtual Box 5.0. If you choose to stick with a 4.x version of Virtual Box I recommend using [v4.3.30](https://www.virtualbox.org/wiki/Download_Old_Builds_4_3) (plus matching [extension pack](http://download.virtualbox.org/virtualbox/4.3.30/Oracle_VM_VirtualBox_Extension_Pack-4.3.30-101610.vbox-extpack)) with [Vagrant v1.7.2](https://www.vagrantup.com/download-archive/v1.7.2.html)
+* **Windows 10 Users** VirtualBox is not yet officially supported on Windows 10. Some people have reported success with their [test builds](https://www.virtualbox.org/wiki/Testbuilds). I have only just gotten it to work with the most recent at the time of writing this ([v5.0.3-102322](https://www.virtualbox.org/download/testcase/VirtualBox-5.0.3-102322-Win.exe)). I will update this info once VirtualBox officially supports Windows 10.
 
 #### Highly Recommended
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
@@ -19,10 +20,6 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ```$ vagrant plugin install vagrant-hostsupdater```
 * [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.0).
 ```$ vagrant plugin install vagrant-vbguest```
-* [vagrant-winnfsd](https://github.com/GM-Alex/vagrant-winnfsd) (v1.0.11).
-```$ vagrant plugin install vagrant-winnfsd```
-(*For Windows host machines that want to use NFS*)
-
 ---
 
 ### What's Included
