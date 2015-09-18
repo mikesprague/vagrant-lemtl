@@ -34,7 +34,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat 7.0.52 with Java 1.7.0_79
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.2.000
+* Lucee 4.5.2.010
 	* MySQL JDBC driver updated to: Connector/J 5.1.36
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.4-1201
 	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
