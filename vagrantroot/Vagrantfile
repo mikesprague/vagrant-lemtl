@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
 		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
 	end
 
-	if Vagrant.has_plugin?("vagrant-hostsupdater")
+	if defined?(VagrantPlugins::HostsUpdater)
 		# set vm hostname
 		config.vm.hostname = vm_naked_hostname
 		config.hostsupdater.aliases = [
