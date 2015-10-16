@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated October 2, 2015
+##### Last Updated October 15, 2015
 ---
 
 ### Prerequisites
@@ -17,25 +17,25 @@ It is assumed you have Virtual Box and Vagrant installed. If not, then grab the 
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
 * [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v0.0.11).
 ```$ vagrant plugin install vagrant-hostsupdater```
-* [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.0).
+* [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.1).
 ```$ vagrant plugin install vagrant-vbguest```
 ---
 
 ### What's Included
-* Ubuntu Server 14.04 (Trusty Tahr) 64bit
+* Ubuntu Server 14.04.3 LTS (Trusty Tahr) 64bit
 	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set vm timezone (configure in Vagrantfile)
 	* NOTE: Tested and working with Ubuntu 12.04, 14.04, 14.10, 15.04 (configurable via Vagrantfile)
-* Nginx 1.9.3
+* Nginx 1.9.4
 	* Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 * MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configurable in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat 7.0.52 with Java 1.7.0_79
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.2.012
-	* MySQL JDBC driver updated to: Connector/J 5.1.36
-	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.4-1201
+* Lucee 4.5.2.016
+	* MySQL JDBC driver updated to: Connector/J 5.1.37
+	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.4-1204
 	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
 		* Many thanks to Andrew Kretzer for his work updating cfspreadsheet-railo for Lucee compatibility
 		* Apache POI library updated to: 3.12-20150511
@@ -56,7 +56,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.5.3
+==> default: Vagrant-LEMTL-v1.5.5
 ==> default:
 ==> default: ===============================================================
 ==> default:
