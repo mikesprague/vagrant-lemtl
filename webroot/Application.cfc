@@ -3,23 +3,27 @@ component output="false" {
 	this.name = hash( cgi.server_name, "MD5", "utf-8" );
 	this.locale = "en_US";
 	this.timezone = "America/New_York";
-	this.charset.web="UTF-8";
-	this.charset.resource="UTF-8";
+	this.charset.web = "UTF-8";
+	this.charset.resource = "UTF-8";
 	this.compression = true;
 	this.applicationTimeout = createTimeSpan( 1, 0, 0, 0 );
 	this.sessionManagement = true;
 	this.sessionTimeout = createTimeSpan( 0, 0, 30, 0 );
 	this.sessionType = "j2ee";
-	this.sessionStorage = "cookie";
+	this.sessionStorage = "memory";
 	this.sessioncookie.httponly = true;
 	this.sessioncookie.secure = true;
 	this.loginStorage = "session";
 	this.clientManagement = true;
 	this.clientStorage = "cookie";
-	this.setClientCookies = true;
 	this.setDomainCookies = true;
+	this.setClientCookies = true;
 	this.scriptProtect = true;
-
+	this.bufferOutput = false;
+	this.compression = true;
+	this.suppressRemoteComponentContent = false;
+	this.typeChecking = true;
+	this.requestTimeout = createTimeSpan( 0, 0, 0, 50 );
 	this.datasources[ "cfartgallery" ] = {
 		class: "org.gjt.mm.mysql.Driver"
 		, connectionString: "jdbc:mysql://localhost:3306/cfartgallery?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=round&autoReconnect=true&jdbcCompliantTruncation=true&useOldAliasMetadataBehavior=true&allowMultiQueries=false"
