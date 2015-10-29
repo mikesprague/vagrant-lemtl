@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated October 27, 2015
+##### Last Updated October 29, 2015
 ---
 
 ### Prerequisites
@@ -40,6 +40,12 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 		* Many thanks to Andrew Kretzer for his work updating cfspreadsheet-railo for Lucee compatibility
 		* Apache POI library updated to: 3.12-20150511
 	* lucee-inst.jar added to javaagent
+	* [jsoup 1.8.3](http://jsoup.org/) included in Lucee server lib directory
+		* Example instantiiation:
+		```objJsoup = createObject( "java", "org.jsoup.Jsoup" );```
+		* jsoup documentation:
+			* [API Docs -  http://jsoup.org/apidocs/](http://jsoup.org/apidocs/)
+			* [Cookbook - http://jsoup.org/cookbook/](http://jsoup.org/cookbook/)
 	* Tweaks to Lucee via server admin
 		* Smart whitespace suppression
 		* Preserve single quotes option enabled for dataase queries
@@ -56,7 +62,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.5.6
+==> default: Vagrant-LEMTL-v1.5.7
 ==> default:
 ==> default: ===============================================================
 ==> default:
