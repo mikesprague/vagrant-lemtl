@@ -31,7 +31,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configurable in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
-* Tomcat 7.0.52 with Java 1.7.0_79
+* Tomcat 7.0.52 with Java 1.7.0_85
 	* catalina.properties tweaks for improved performance
 * Lucee 4.5.2.017
 	* MySQL JDBC driver updated to: Connector/J 5.1.37
@@ -41,7 +41,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 		* Apache POI library updated to: 3.12-20150511
 	* lucee-inst.jar added to javaagent
 	* [jsoup 1.8.3](http://jsoup.org/) included in Lucee server lib directory
-		* Example instantiiation:
+		* Example instantiation:
 		```objJsoup = createObject( "java", "org.jsoup.Jsoup" );```
 		* jsoup documentation:
 			* [API Docs -  http://jsoup.org/apidocs/](http://jsoup.org/apidocs/)
