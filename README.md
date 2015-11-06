@@ -26,7 +26,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set vm timezone (configure in Vagrantfile)
 	* NOTE: Tested and working with Ubuntu 12.04, 14.04, 14.10, 15.04 (configurable via Vagrantfile)
-* Nginx 1.9.4
+* Nginx 1.9.6
 	* Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 * MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configurable in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
