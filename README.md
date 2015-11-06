@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated October 29, 2015
+##### Last Updated November 6, 2015
 ---
 
 ### Prerequisites
@@ -50,6 +50,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 		* Smart whitespace suppression
 		* Preserve single quotes option enabled for dataase queries
 		* Update provider set to Development Releases
+		* Default cache setup so cacheGet/cachePut/etc work out of the box
 
 ---
 
@@ -62,7 +63,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.5.7
+==> default: Vagrant-LEMTL-v1.5.8
 ==> default:
 ==> default: ===============================================================
 ==> default:
