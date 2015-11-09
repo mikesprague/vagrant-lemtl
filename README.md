@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated November 6, 2015
+##### Last Updated November 9, 2015
 ---
 
 ### Prerequisites
@@ -9,15 +9,14 @@ NOTE: All version numbers used in this document are confirmed to work, and are c
 
 #### Required
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
-* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (5.0.6)
+* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (5.0.8)
 * [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.4)
-* **IMPORTANT NOTE:** If you're on Windows (not sure about other OSs) and you are running Virtual Box 5.x.x (or want to) then you **MUST** install Vagrant v1.7.4; there are known bugs/issues with Vagrant v1.7.3 and below when used with Virtual Box 5.0. If you choose to stick with a 4.x version of Virtual Box I recommend using [v4.3.30](https://www.virtualbox.org/wiki/Download_Old_Builds_4_3) (plus matching [extension pack](http://download.virtualbox.org/virtualbox/4.3.30/Oracle_VM_VirtualBox_Extension_Pack-4.3.30-101610.vbox-extpack)) with [Vagrant v1.7.2](https://www.vagrantup.com/download-archive/v1.7.2.html)
 
 #### Highly Recommended
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
 * [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v0.0.11).
 ```$ vagrant plugin install vagrant-hostsupdater```
-* [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.10.1).
+* [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.11.0).
 ```$ vagrant plugin install vagrant-vbguest```
 ---
 
@@ -33,7 +32,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat 7.0.52 with Java 1.7.0_85
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.2.017
+* Lucee 4.5.2.018 (Stable)
 	* MySQL JDBC driver updated to: Connector/J 5.1.37
 	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.4-1204
 	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
@@ -63,7 +62,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.5.8
+==> default: Vagrant-LEMTL-v1.6.0
 ==> default:
 ==> default: ===============================================================
 ==> default:
