@@ -18,6 +18,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ```$ vagrant plugin install vagrant-hostsupdater```
 * [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.11.0).
 ```$ vagrant plugin install vagrant-vbguest```
+
 ---
 
 ### What's Included
