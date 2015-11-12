@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated November 9, 2015
+##### Last Updated November 12, 2015
 ---
 
 ### Prerequisites
@@ -9,7 +9,7 @@ NOTE: All version numbers used in this document are confirmed to work, and are c
 
 #### Required
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
-* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (5.0.8)
+* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.0.10)
 * [Vagrant](https://www.vagrantup.com/downloads.html) (v1.7.4)
 
 #### Highly Recommended
@@ -21,25 +21,25 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 ---
 
 ### What's Included
-* Ubuntu Server 14.04.3 LTS (Trusty Tahr) 64bit
+* Ubuntu Server v14.04.3 LTS (Trusty Tahr) 64bit
 	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
 	* Set vm timezone (configure in Vagrantfile)
-	* NOTE: Tested and working with Ubuntu 12.04, 14.04, 14.10, 15.04 (configurable via Vagrantfile)
-* Nginx 1.9.6
+	* NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
+* Nginx v1.9.6
 	* Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
-* MariaDB 10.0.x or MySQL 5.5.x (defaults to MariaDB, configurable in Vagrantfile)
+* MariaDB v10.0.x or MySQL v5.5.x (defaults to MariaDB, configurable in Vagrantfile)
 	* lower_case_table_names = 1 (disables case sensitivity)
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
-* Tomcat 7.0.52 with Java 1.7.0_85
+* Tomcat v7.0.52 with Java v1.7.0_85
 	* catalina.properties tweaks for improved performance
-* Lucee 4.5.2.018 (Stable)
-	* MySQL JDBC driver updated to: Connector/J 5.1.37
-	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version 9.4-1204
+* Lucee v4.5.3.000
+	* MySQL JDBC driver updated to: Connector/J v5.1.37
+	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version v9.4-1204
 	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
 		* Many thanks to Andrew Kretzer for his work updating cfspreadsheet-railo for Lucee compatibility
-		* Apache POI library updated to: 3.12-20150511
+		* Apache POI library updated to: v3.12-20150511
 	* lucee-inst.jar added to javaagent
-	* [jsoup 1.8.3](http://jsoup.org/) included in Lucee server lib directory
+	* [jsoup v1.8.3](http://jsoup.org/) included in Lucee server lib directory
 		* Example instantiation:
 		```objJsoup = createObject( "java", "org.jsoup.Jsoup" );```
 		* jsoup documentation:
@@ -62,7 +62,7 @@ $ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.6.0
+==> default: Vagrant-LEMTL-v1.6.1
 ==> default:
 ==> default: ===============================================================
 ==> default:
