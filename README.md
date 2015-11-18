@@ -1,7 +1,8 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated November 12, 2015
+##### Last Updated November 18, 2015
+
 ---
 
 ### Prerequisites
@@ -14,10 +15,14 @@ It is assumed you have Virtual Box and Vagrant installed. If not, then grab the 
 
 #### Highly Recommended
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
-* [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v0.0.11).
-```$ vagrant plugin install vagrant-hostsupdater```
-* [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.11.0).
-```$ vagrant plugin install vagrant-vbguest```
+* [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v1.0.1)
+```bash
+vagrant plugin install vagrant-hostsupdater
+```
+* [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.11.0)
+```bash
+vagrant plugin install vagrant-vbguest
+```
 
 ---
 
@@ -33,16 +38,18 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat v7.0.52 with Java v1.7.0_85
 	* catalina.properties tweaks for improved performance
-* Lucee v4.5.3.000
+* Lucee v4.5.3.000 (dev)
 	* MySQL JDBC driver updated to: Connector/J v5.1.37
-	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, Version v9.4-1204
+	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, v9.4-1204
 	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
 		* Many thanks to Andrew Kretzer for his work updating cfspreadsheet-railo for Lucee compatibility
-		* Apache POI library updated to: v3.12-20150511
+		* Apache POI library updated to: v3.13-20150929
 	* lucee-inst.jar added to javaagent
 	* [jsoup v1.8.3](http://jsoup.org/) included in Lucee server lib directory
 		* Example instantiation:
-		```objJsoup = createObject( "java", "org.jsoup.Jsoup" );```
+		```java
+			objJsoup = createObject( "java", "org.jsoup.Jsoup" );
+		```
 		* jsoup documentation:
 			* [API Docs -  http://jsoup.org/apidocs/](http://jsoup.org/apidocs/)
 			* [Cookbook - http://jsoup.org/cookbook/](http://jsoup.org/cookbook/)
@@ -50,15 +57,15 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 		* Smart whitespace suppression
 		* Preserve single quotes option enabled for dataase queries
 		* Update provider set to Development Releases
-		* Default cache setup so cacheGet/cachePut/etc work out of the box
+		* Default cache (ehcache) setup so cacheGet/cachePut/etc work out of the box
 
 ---
 
 ### Installation
 The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working (the Linux updates, on first run, can take a while).
 ```bash
-$ git clone https://github.com/writecodedrinkcoffee/vagrant-lemtl.git
-$ cd vagrant-lemtl/vagrantroot && vagrant up
+git clone https://github.com/writecodedrinkcoffee/vagrant-lemtl.git
+cd vagrant-lemtl/vagrantroot && vagrant up
 ```
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
@@ -97,7 +104,7 @@ or [http://192.168.50.25/](http://192.168.50.25/)
 ---
 
 #### References
-The following two posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/) in September, 2014, heavily influenced this project:
+The following two posts, written by [Mark Drew](http://www.markdrew.co.uk/blog/), heavily influenced this project:
 * [Easy Railo App Development with Vagrant](http://blog.cmdbase.io/easy-railo-development-with-vagrant/)
 * [Saving Railo Configurations](http://blog.cmdbase.io/saving-railo-configurations/)
 
