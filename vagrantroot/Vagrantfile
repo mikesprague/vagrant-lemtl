@@ -9,9 +9,9 @@ vm_sql_hostname = "db.#{vm_naked_hostname}"
 vm_timezone  = "US/Eastern"
 vm_current_version = "v1.6.2"
 vm_name = "Vagrant-LEMTL-#{vm_current_version}"
-vm_max_memory = 2048
+vm_max_memory = 1024
 vm_num_cpus = 1
-vm_max_host_cpu_cap = "33"
+vm_max_host_cpu_cap = "25"
 vm_ubuntu_version_string = "trusty" # "precise" (12.04) | "trusty" (14.04) | "utopic" (14.10) | "vivid" (15.04)
 
 # database configuration
