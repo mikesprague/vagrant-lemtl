@@ -7,11 +7,11 @@ vm_naked_hostname = "vagrant-lemtl.local"
 vm_www_hostname = "www.#{vm_naked_hostname}"
 vm_sql_hostname = "db.#{vm_naked_hostname}"
 vm_timezone  = "US/Eastern"
-vm_current_version = "v1.6.3"
+vm_current_version = "v1.6.4"
 vm_name = "Vagrant-LEMTL-#{vm_current_version}"
-vm_max_memory = 1536
+vm_max_memory = 2048 # at least 1536 (1.5gb) recommended
 vm_num_cpus = 1
-vm_max_host_cpu_cap = "25"
+vm_max_host_cpu_cap = "30"
 vm_ubuntu_version_string = "trusty" # "precise" (12.04) | "trusty" (14.04) | "vivid" (15.04)
 
 # database configuration
