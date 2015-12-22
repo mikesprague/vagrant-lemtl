@@ -9,7 +9,7 @@ vm_sql_hostname = "db.#{vm_naked_hostname}"
 vm_timezone  = "US/Eastern"
 vm_current_version = "v1.6.4"
 vm_name = "Vagrant-LEMTL-#{vm_current_version}"
-vm_max_memory = 2048 # at least 1536 (1.5gb) recommended
+vm_max_memory = 2048
 vm_num_cpus = 1
 vm_max_host_cpu_cap = "30"
 vm_ubuntu_version_string = "trusty" # "precise" (12.04) | "trusty" (14.04) | "vivid" (15.04)
@@ -22,7 +22,7 @@ db_create_database_name = "cfartgallery"
 db_sql_file_to_import = "data/cfartgallery.sql"
 
 # synced folder configuration
-synced_webroot_local = "../webroot/"
+synced_webroot_local = "../webroot"
 synced_webroot_box = "/var/www/sites/default"
 
 Vagrant.configure("2") do |config|
