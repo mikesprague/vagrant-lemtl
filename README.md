@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated December 25, 2015
+##### Last Updated January 28, 2016
 
 ---
 
@@ -10,7 +10,7 @@ NOTE: All version numbers used in this document are confirmed to work, and are c
 
 #### Required
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
-* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.0.12)
+* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.0.14)
 * [Vagrant](https://www.vagrantup.com/downloads.html) (v1.8.1)
 
 #### Highly Recommended
@@ -28,36 +28,36 @@ vagrant plugin install vagrant-vbguest
 
 ### What's Included
 * Ubuntu Server v14.04.3 LTS (Trusty Tahr) 64bit
-	* Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
-	* Set vm timezone (configure in Vagrantfile)
-	* NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
-* Nginx v1.9.7
-	* Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
+  * Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
+  * Set vm timezone (configure in Vagrantfile)
+  * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
+* Nginx v1.9.9
+  * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 * MariaDB v10.1.x or MySQL v5.7.x (defaults to MariaDB, configurable in Vagrantfile)
-	* lower_case_table_names = 1 (disables case sensitivity)
-	* bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
+  * lower_case_table_names = 1 (disables case sensitivity)
+  * bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 * Tomcat v7.0.52 with Java v1.7.0_91
-	* catalina.properties tweaks for improved performance
-* Lucee v4.5.3.002 (dev)
-	* MySQL JDBC driver updated to: Connector/J v5.1.37
-	* Postgres JDBC driver updated to: JDBC41 Postgresql Driver, v9.4-1204
-	* [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
-		* Many thanks to Andrew Kretzer for his work updating cfspreadsheet-railo for Lucee compatibility
-		* Apache POI library updated to: v3.13-20150929
-	* lucee-inst.jar added to javaagent
-	* [jsoup v1.8.3](http://jsoup.org/) included in Lucee server lib directory
-		* Example instantiation:
-		```java
-			objJsoup = createObject( "java", "org.jsoup.Jsoup" );
-		```
-		* jsoup documentation:
-			* [API Docs -  http://jsoup.org/apidocs/](http://jsoup.org/apidocs/)
-			* [Cookbook - http://jsoup.org/cookbook/](http://jsoup.org/cookbook/)
-	* Tweaks to Lucee via server admin
-		* Smart whitespace suppression
-		* Preserve single quotes option enabled for dataase queries
-		* Update provider set to Development Releases
-		* Default cache (ehcache) setup so cacheGet/cachePut/etc work out of the box
+  * catalina.properties tweaks for improved performance
+* Lucee v4.5.3.003 (dev)
+  * MySQL JDBC driver updated to: Connector/J v5.1.37
+  * Postgres JDBC driver updated to: JDBC41 Postgresql Driver, v9.4-1204
+  * [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
+    * Many thanks to Andrew Kretzer for his work updating cfspreadsheet-railo for Lucee compatibility
+    * Apache POI library updated to: v3.13-20150929
+  * lucee-inst.jar added to javaagent
+  * [jsoup v1.8.3](http://jsoup.org/) included in Lucee server lib directory
+    * Example instantiation:
+    ```java
+      objJsoup = createObject( "java", "org.jsoup.Jsoup" );
+    ```
+    * jsoup documentation:
+      * [API Docs -  http://jsoup.org/apidocs/](http://jsoup.org/apidocs/)
+      * [Cookbook - http://jsoup.org/cookbook/](http://jsoup.org/cookbook/)
+  * Tweaks to Lucee via server admin
+    * Smart whitespace suppression
+    * Preserve single quotes option enabled for dataase queries
+    * Update provider set to Development Releases
+    * Default cache (ehcache) setup so cacheGet/cachePut/etc work out of the box
 
 ---
 
@@ -70,7 +70,7 @@ cd vagrant-lemtl/vagrantroot && vagrant up
 
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 ```bash
-==> default: Vagrant-LEMTL-v1.6.4
+==> default: Vagrant-LEMTL-v1.6.5
 ==> default:
 ==> default: ===============================================================
 ==> default:
