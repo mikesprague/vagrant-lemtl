@@ -1,7 +1,7 @@
 # Vagrant LEMTL
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
 
-##### Last Updated January 28, 2016
+##### Last Updated February 5, 2016
 
 ---
 
@@ -31,7 +31,7 @@ vagrant plugin install vagrant-vbguest
   * Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
   * Set vm timezone (configure in Vagrantfile)
   * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
-* Nginx v1.9.9
+* Nginx v1.9.10
   * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 * MariaDB v10.1.x or MySQL v5.7.x (defaults to MariaDB, configurable in Vagrantfile)
   * lower_case_table_names = 1 (disables case sensitivity)
