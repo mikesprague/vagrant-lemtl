@@ -7,7 +7,7 @@ vm_naked_hostname = "vagrant-lemtl.local"
 vm_www_hostname = "www.#{vm_naked_hostname}"
 vm_sql_hostname = "db.#{vm_naked_hostname}"
 vm_timezone  = "US/Eastern"
-vm_current_version = "v1.6.5"
+vm_current_version = "v1.6.6"
 vm_name = "Vagrant-LEMTL-#{vm_current_version}"
 vm_max_memory = 2048
 vm_num_cpus = 1
@@ -28,7 +28,7 @@ synced_webroot_box = "/var/www/sites/default"
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/#{vm_ubuntu_version_string}64"
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/#{vm_ubuntu_version_string}/current/#{vm_ubuntu_version_string}-server-cloudimg-amd64-vagrant-disk1.box"
-  config.vm.boot_timeout = 180
+  config.vm.boot_timeout = 300
   config.vm.network :private_network, ip: vm_ip_address, auto_correct: true
   config.vm.synced_folder synced_webroot_local, synced_webroot_box, :nfs => { :mount_options => ["dmode=777","fmode=666"] }
 
