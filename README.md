@@ -4,7 +4,7 @@ Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local d
 
 ---
 
-**Last Updated March 8, 2016**
+**Last Updated March 30, 2016**
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
 
-  * Nginx v1.9.11
+  * Nginx v1.9.12
 
     * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 
@@ -60,7 +60,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * catalina.properties tweaks for improved performance
 
-  * Lucee v4.5.3.008 (dev)
+  * Lucee v4.5.3.011 (dev)
 
     * MySQL JDBC driver updated to: Connector/J v5.1.38
 
@@ -112,7 +112,7 @@ cd vagrant-lemtl/vagrantroot && vagrant up
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 
 ```bash
-==> default: Vagrant-LEMTL-v1.6.8
+==> default: Vagrant-LEMTL-v1.6.9
 ==> default:
 ==> default: ===============================================================
 ==> default:
