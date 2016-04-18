@@ -4,7 +4,7 @@ Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local d
 
 ---
 
-**Last Updated April 16, 2016**
+**Last Updated April 18, 2016**
 
 ## Prerequisites
 
@@ -70,7 +70,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
       * Many thanks to Andrew Kretzer for his work updating cfspreadsheet-railo for Lucee compatibility
 
-      * Apache POI library updated to: v3.13-20150929
+      * Apache POI library updated to: v3.14-20160307
 
     * lucee-inst.jar added to javaagent
 
@@ -112,7 +112,7 @@ cd vagrant-lemtl/vagrantroot && vagrant up
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 
 ```bash
-==> default: Vagrant-LEMTL-v1.6.10
+==> default: Vagrant-LEMTL-v1.6.11
 ==> default:
 ==> default: ===============================================================
 ==> default:
