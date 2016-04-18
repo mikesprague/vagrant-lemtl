@@ -46,7 +46,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
 
-  * Nginx v1.9.12
+  * Nginx v1.9.14
 
     * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 
@@ -74,7 +74,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * lucee-inst.jar added to javaagent
 
-    * [jsoup v1.8.3](http://jsoup.org/) included in Lucee server lib directory
+    * [jsoup v1.9.1](http://jsoup.org/) included in Lucee server lib directory
 
       * Example instantiation:
 
