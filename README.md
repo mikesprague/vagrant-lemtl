@@ -14,7 +14,7 @@ NOTE: All version numbers used in this document are confirmed to work, and are c
 
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
 
-  * [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.0.16)
+  * [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.0.18)
 
   * [Vagrant](https://www.vagrantup.com/downloads.html) (v1.8.1)
 
