@@ -4,7 +4,7 @@ Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local d
 
 ---
 
-**Last Updated April 18, 2016**
+**Last Updated April 26, 2016**
 
 ## Prerequisites
 
@@ -112,7 +112,7 @@ cd vagrant-lemtl/vagrantroot && vagrant up
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 
 ```bash
-==> default: Vagrant-LEMTL-v1.6.11
+==> default: Vagrant-LEMTL-v1.6.12
 ==> default:
 ==> default: ===============================================================
 ==> default:
