@@ -4,7 +4,11 @@ Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local d
 
 ---
 
-**Last Updated May 1, 2016**
+Find this project useful? [Show some love :revolving_hearts:](https://www.creatorlove.com/mikesprague/vagrant-lemtl) and buy me a cup of cofee! :coffee:
+
+---
+
+**Last Updated May 5, 2016**
 
 ## Prerequisites
 
