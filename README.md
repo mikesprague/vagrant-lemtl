@@ -8,7 +8,7 @@ Find this project useful? [Show some love :revolving_hearts:](https://www.creato
 
 ---
 
-**Last Updated May 5, 2016**
+**Last Updated May 23, 2016**
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
 
-  * Nginx v1.9.14
+  * Nginx v1.10.0
 
     * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 
@@ -78,7 +78,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * lucee-inst.jar added to javaagent
 
-    * [jsoup v1.9.1](http://jsoup.org/) included in Lucee server lib directory
+    * [jsoup v1.9.2](http://jsoup.org/) included in Lucee server lib directory
 
       * Example instantiation:
 
@@ -116,7 +116,7 @@ cd vagrant-lemtl/vagrantroot && vagrant up
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 
 ```bash
-==> default: Vagrant-LEMTL-v1.6.13
+==> default: Vagrant-LEMTL-v1.6.14
 ==> default:
 ==> default: ===============================================================
 ==> default:
