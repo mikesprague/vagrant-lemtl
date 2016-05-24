@@ -60,7 +60,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
 
-  * Tomcat v7.0.52 with Java v1.7.0_95
+  * Tomcat v7.0.52 with Java v1.7.0_101
 
     * catalina.properties tweaks for improved performance
 
