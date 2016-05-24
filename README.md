@@ -64,7 +64,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * catalina.properties tweaks for improved performance
 
-  * Lucee v4.5.3.015 (dev)
+  * Lucee v4.5.3.017 (dev)
 
     * MySQL JDBC driver updated to: Connector/J v5.1.38
 
