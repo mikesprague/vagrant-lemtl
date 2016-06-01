@@ -109,7 +109,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working (the Linux updates, on first run, can take a while).
 
 ```bash
-git clone https://github.com/writecodedrinkcoffee/vagrant-lemtl.git
+git clone https://github.com/mikesprague/vagrant-lemtl.git
 cd vagrant-lemtl/vagrantroot && vagrant up
 ```
 
