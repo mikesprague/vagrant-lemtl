@@ -8,7 +8,7 @@ Find this project useful? [Show some love :revolving_hearts:](https://www.creato
 
 ---
 
-**Last Updated May 23, 2016**
+**Last Updated June 3, 2016**
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
 
-  * Nginx v1.10.0
+  * Nginx v1.11.1
 
     * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
 
@@ -64,9 +64,9 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 
     * catalina.properties tweaks for improved performance
 
-  * Lucee v4.5.3.017 (dev)
+  * Lucee v4.5.4.001 (dev)
 
-    * MySQL JDBC driver updated to: Connector/J v5.1.38
+    * MySQL JDBC driver updated to: Connector/J v5.1.39
 
     * Postgres JDBC driver updated to: JDBC41 Postgresql Driver, v9.4.1208
 
@@ -116,7 +116,7 @@ cd vagrant-lemtl/vagrantroot && vagrant up
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 
 ```bash
-==> default: Vagrant-LEMTL-v1.6.14
+==> default: Vagrant-LEMTL-v1.6.15
 ==> default:
 ==> default: ===============================================================
 ==> default:
