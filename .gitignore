@@ -5,6 +5,7 @@ webroot/WEB-INF
 webroot/WEB-INF/lucee-server/felix-cache/*
 !webroot/WEB-INF/lucee-server
 !webroot/WEB-INF/context/logs
+!webroot/WEB-INF/context/logs/felix.log
 webroot/*
 !webroot/Application.cfc
 !webroot/index.cfm
