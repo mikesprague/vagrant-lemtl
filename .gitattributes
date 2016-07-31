@@ -1,2 +1,4 @@
-.jar filter=lfs diff=lfs merge=lfs -crlf
-.lco filter=lfs diff=lfs merge=lfs -crlf
+rcS eol=lf
+vagrantroot/configs/rcS eol=lf
+.jar filter=lfs diff=lfs merge=lfs -lf
+.lco filter=lfs diff=lfs merge=lfs -lf
