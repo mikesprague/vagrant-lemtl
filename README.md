@@ -1,3 +1,5 @@
+[![Codewake](https://www.codewake.com/badges/codewake.svg)](https://www.codewake.com/p/vagrant-lemtl)
+
 # Vagrant LEMTL
 
 Vagrant box with Linux, Nginx, MariaDB (or MySQL), Tomcat, and Lucee for local development with CFML and Java
