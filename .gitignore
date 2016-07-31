@@ -2,8 +2,9 @@
 *.sublime-project
 .vagrant
 webroot/WEB-INF
-!webroot/WEB-INF/lucee-server
 webroot/WEB-INF/lucee-server/felix-cache/*
+!webroot/WEB-INF/lucee-server
+!webroot/WEB-INF/context/logs
 webroot/*
 !webroot/Application.cfc
 !webroot/index.cfm
