@@ -4,6 +4,9 @@ echo "================= START STEP-3-INSTALL-TOMCAT.SH $(date +"%r") ===========
 echo " "
 echo "BEGIN setting up Tomcat"
 
+# copy rcS to the vm
+sudo cp /vagrant/configs/rcS /etc/default/rcS
+
 # install tomcat7
 if [ ! -d "/etc/tomcat7" ]; then
 	echo "... Installing Tomcat (grab a cup of coffee, this may take a few minutes) ..."
