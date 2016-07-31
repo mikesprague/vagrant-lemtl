@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE func-lib PUBLIC "-//Railo//DTD CFML Function Library 1.0//EN"
+	"dtd/web-cfmfunctionlibrary_1_0.dtd">
+<!-- http://www.getrailo.com/j2ee/dtd/web-jspfunctionlibrary_1_0.dtd -->
+<func-lib>
+	<flib-version>1.00</flib-version>
+	<short-name>PDF</short-name>
+	<uri>http://extension.lucee.org/function/pdf</uri>
+	<display-name>PDF</display-name>
+	<description>
+		Functions to interact with PDF
+	</description>
+
+	
+	<!-- IsPDFFile -->
+	<function>
+		<name>IsPDFFile</name>
+		<class bundle-name="pdf.extension" bundle-version="1.0.0.52">org.lucee.extension.pdf.function.IsPDFFile</class>
+		<status>unimplemeted</status>
+		<keywords>decision,pdf</keywords>
+		<description>Verifies whether a PDF file is valid.</description>
+		<argument>
+			<name>path</name>
+			<type>string</type>
+			<required>Yes</required>
+		<description>Pathname to a PDF file. The pathname can be absolute or relative to the CFM page and must be enclosed in quotation marks.</description>
+    </argument>
+		<return>
+			<type>boolean</type>
+		</return>
+	</function>
+	<!-- IsPDFObject -->
+	<function>
+		<name >IsPDFObject</name>
+		<class bundle-name="pdf.extension" bundle-version="1.0.0.52">org.lucee.extension.pdf.function.IsPDFObject</class>
+		<keywords>decision,pdf</keywords>
+		<description>Determines whether a value is a PDF object.</description>
+		<argument>
+			<name>value</name>
+			<type>any</type>
+			<required>Yes</required>
+		<description>A value, typically the PDF object stored as a variable name.</description>
+    </argument>
+		<return>
+			<type>boolean</type>
+		</return>
+	</function>
+	
+	
+</func-lib>

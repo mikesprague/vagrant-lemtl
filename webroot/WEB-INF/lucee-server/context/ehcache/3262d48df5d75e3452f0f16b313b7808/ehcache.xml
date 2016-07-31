@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xsi:noNamespaceSchemaLocation="ehcache.xsd">
+<diskStore path="/var/www/sites/default/WEB-INF/lucee-server/context/ehcache/3262d48df5d75e3452f0f16b313b7808"/>
+<cacheManagerEventListenerFactory class="" properties=""/>
+<defaultCache 
+   diskPersistent="true"
+   eternal="false"
+   maxElementsInMemory="10000"
+   maxElementsOnDisk="10000000"
+   memoryStoreEvictionPolicy="LRU"
+   timeToIdleSeconds="86400"
+   timeToLiveSeconds="86400"
+   overflowToDisk="true"
+   diskSpoolBufferSizeMB="30"
+   diskExpiryThreadIntervalSeconds="3600"
+ />
+<cache name="default-cache"
+   diskPersistent="true"
+   eternal="false"
+   maxElementsInMemory="10000"
+   maxElementsOnDisk="10000000"
+   memoryStoreEvictionPolicy="LRU"
+   timeToIdleSeconds="86400"
+   timeToLiveSeconds="86400"
+   overflowToDisk="true">
+ </cache>
+</ehcache>

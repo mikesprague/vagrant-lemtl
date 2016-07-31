@@ -39,7 +39,7 @@ Path placeholders:
 		lock-timeout   - 	define how long a request wait for a lock
 	 	-->
     	<resource-provider arguments="case-sensitive:true;lock-timeout:1000;" class="lucee.commons.io.res.type.ram.RamResourceProvider" scheme="ram"/>
-    <resource-provider arguments="lock-timeout:10000;" class="lucee.commons.io.res.type.s3.S3ResourceProvider" scheme="s3"/></resources>
+    </resources>
     
     <remote-clients directory="{lucee-web}remote-client/"/>
 	

@@ -15,8 +15,6 @@ echo "... Configuring Tomcat ..."
 sudo cp /vagrant/configs/server.xml /etc/tomcat7/server.xml
 # copy modified catalina.properties to the vm
 sudo cp /vagrant/configs/catalina.properties /etc/tomcat7/catalina.properties
-# copy setenv.sh to the vm
-sudo cp /vagrant/configs/setenv.sh /usr/share/tomcat7/bin/setenv.sh
 # restart tomcat
 sudo service tomcat7 restart > /dev/null
 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE func-lib PUBLIC "-//Railo//DTD CFML Function Library 1.0//EN"
+	"dtd/web-cfmfunctionlibrary_1_0.dtd">
+<!-- http://www.getrailo.com/j2ee/dtd/web-jspfunctionlibrary_1_0.dtd -->
+<func-lib>
+	<flib-version>1.00</flib-version>
+	<short-name>S3</short-name>
+	<uri>http://extension.lucee.org/function/s3</uri>
+	<display-name>PDF</display-name>
+	<description>
+		Functions to interact with S3 Resource
+	</description>
+
+	<!-- StoreAddACL -->
+	<function>
+		<name>StoreAddACL</name>
+		<class bundle-name="s3.extension" bundle-version="0.9.4.104">org.lucee.extension.resource.s3.function.StoreAddACL</class>
+		<description>Adds ACL to existing ACL for object or bucket.</description>
+		<argument>
+			<name>url</name>
+			<type>string</type>
+			<required>Yes</required>
+			<description>Amazon S3 URL</description>
+	    </argument>
+		<argument>
+			<name>aclObject</name>
+			<type>object</type>
+			<required>Yes</required>
+			<description>an array of struct where each struct represents an ACL grant</description>
+	    </argument>
+		<return>
+			<type>void</type>
+		</return>
+	</function>
+	<!-- StoreGetACL -->
+	<function>
+		<name>StoreGetACL</name>
+		<class bundle-name="s3.extension" bundle-version="0.9.4.104">org.lucee.extension.resource.s3.function.StoreGetACL</class>
+		<description>returns an array of struct where each struct represents an ACL grant</description>
+		<argument>
+			<name>url</name>
+			<type>string</type>
+				<required>Yes</required>
+			<description>Amazon S3 URL</description>
+	    </argument>
+		<return>
+			<type>Object</type>
+		</return>
+	</function>
+	<!-- StoreSetACL -->
+	<function>
+		<name>StoreSetACL</name>
+		<class bundle-name="s3.extension" bundle-version="0.9.4.104">org.lucee.extension.resource.s3.function.StoreSetACL</class>
+		<description>Sets the ACL for object or bucket.</description>
+		<argument>
+			<name>url</name>
+			<type>string</type>
+			<required>Yes</required>
+			<description>Amazon S3 URL</description>
+	    </argument>
+		<argument>
+			<name>aclObject</name>
+			<type>object</type>
+			<required>Yes</required>
+			<description>an array of struct where each struct represents an ACL grant</description>
+	    </argument>
+		<return>
+			<type>void</type>
+		</return>
+	</function>
+
+
+	<!-- StoreGetMetaData -->
+	<function>
+		<name>StoreGetMetaData</name>
+		<class bundle-name="s3.extension" bundle-version="0.9.4.104">org.lucee.extension.resource.s3.function.StoreGetMetaData</class>
+        <introduced>5.0.0.000</introduced>
+        <description>Returns the metadata related to the object or bucket.</description>
+		<argument>
+			<name>url</name>
+			<type>string</type>
+				<required>Yes</required>
+			<description>Amazon S3 URL</description>
+	    </argument>
+		<return>
+			<type>struct</type>
+		</return>
+	</function>
+	<!-- StoreSetMetaData -->
+	<function>
+		<name>StoreSetMetaData</name>
+		<class bundle-name="s3.extension" bundle-version="0.9.4.104">org.lucee.extension.resource.s3.function.StoreSetMetaData</class>
+        <introduced>5.0.0.000</introduced>
+		<description>Sets the metadata on bucket or object.</description>
+		<argument>
+			<name>url</name>
+			<type>string</type>
+			<required>Yes</required>
+			<description>Amazon S3 URL</description>
+	    </argument>
+		<argument>
+			<name>metadata</name>
+			<type>struct</type>
+			<required>Yes</required>
+			<description></description>
+	    </argument>
+		<return>
+			<type>void</type>
+		</return>
+	</function>
+	
+</func-lib>
