@@ -8,7 +8,7 @@ Find this project useful? [Show some love :revolving_hearts:](https://www.creato
 
 ---
 
-**Last Updated July 21, 2016**
+**Last Updated July 31, 2016**
 
 ## Prerequisites
 
@@ -18,95 +18,57 @@ NOTE: All version numbers used in this document are confirmed to work, and are c
 
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
 
-  * [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.0.20)
-
-  * [Vagrant](https://www.vagrantup.com/downloads.html) (v1.8.1)
+* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.1.2-108956)
+* [Vagrant](https://www.vagrantup.com/downloads.html) (v1.8.5)
 
 ### Highly Recommended
 
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
 
-  * [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v1.0.2)
-
+* [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v1.0.2)
   ```bash
   vagrant plugin install vagrant-hostsupdater
-  ```
-
-  * [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) (v0.11.0)
-
-  ```bash
-  vagrant plugin install vagrant-vbguest
   ```
 
 ---
 
 ## What's Included
 
-  * Ubuntu Server v14.04.4 LTS (Trusty Tahr) 64bit
-
-    * Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
-
-    * Set vm timezone (configure in Vagrantfile)
-
-    * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
-
-  * Nginx v1.11.2
-
-    * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
-
-    * MariaDB v10.1.x or MySQL v5.7.x (defaults to MariaDB, configurable in Vagrantfile)
-
-    * lower_case_table_names = 1 (disables case sensitivity)
-
-    * bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
-
-  * Tomcat v7.0.52 with Java v1.7.0_101
-
-    * catalina.properties tweaks for improved performance
-
-  * Lucee v4.5.4.006 (dev)
-
-    * MySQL JDBC driver updated to: Connector/J v5.1.39
-
-    * Postgres JDBC driver updated to: JDBC41 Postgresql Driver, v9.4.1208
-
-    * [cfspreadsheet-lucee](https://github.com/Leftbower/cfspreadsheet-lucee) pre-installed
-
-      * Many thanks to Andrew Kretzer for his work updating cfspreadsheet-railo for Lucee compatibility
-
-      * Apache POI library updated to: v3.14-20160307
-
-    * lucee-inst.jar added to javaagent
-
-    * [jsoup v1.9.2](http://jsoup.org/) included in Lucee server lib directory
-
-      * Example instantiation:
-
+* Ubuntu Server v14.04.4 LTS (Trusty Tahr) 64bit
+  * Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
+  * Set vm timezone (configure in Vagrantfile)
+  * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
+* Nginx v1.11.2
+  * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
+  * MariaDB v10.1.x or MySQL v5.7.x (defaults to MariaDB, configurable in Vagrantfile)
+  * lower_case_table_names = 1 (disables case sensitivity)
+  * bind-address set to 0.0.0.0 so database server can be accessed from the host machine directly (without ssh tunnel)
+* Tomcat v7.0.52 with Java (OpenJDK) v1.8.0_91
+  * catalina.properties tweaks for improved performance
+* Lucee v5.1.0.17 (dev)
+  * [cfspreadsheet-lucee-5](https://github.com/Leftbower/cfspreadsheet-lucee-5) pre-installed
+    * Many thanks to Andrew Kretzer for his work updating cfspreadsheet-lucee for Lucee 5 compatibility
+  * [jsoup v1.9.2](http://jsoup.org/) included in Lucee server bundles directory
+    * Example instantiation:
       ```java
         objJsoup = createObject( "java", "org.jsoup.Jsoup" );
       ```
-
-      * jsoup documentation:
-
-        * [API Docs -  http://jsoup.org/apidocs/](http://jsoup.org/apidocs/)
-        * [Cookbook - http://jsoup.org/cookbook/](http://jsoup.org/cookbook/)
-
-    * Tweaks to Lucee via server admin
-
-
-      * Smart whitespace suppression
-
-      * Preserve single quotes option enabled for dataase queries
-
-      * Update provider set to Development Releases
-
-      * Default cache (ehcache) setup so cacheGet/cachePut/etc work out of the box
+    * jsoup documentation:
+      * [API Docs -  http://jsoup.org/apidocs/](http://jsoup.org/apidocs/)
+      * [Cookbook - http://jsoup.org/cookbook/](http://jsoup.org/cookbook/)
+  * Tweaks to Lucee via server admin
+    * Smart whitespace suppression
+    * Preserve single quotes option enabled for dataase queries
+    * Update provider set to Development Releases
+    * Default cache (ehcache) setup so cacheGet/cachePut/etc work out of the box
 
 ---
 
 ## Installation
 
-The first time you clone the repo and bring the box up, it may take several minutes. If it doesn't explicitly fail/quit, then it is still working (the Linux updates, on first run, can take a while).
+The first time you clone the repo and bring the box up, it may take several minutes.
+If it doesn't explicitly fail/quit, then it is still working (the Linux updates, on
+first run, can take a while).
 
 ```bash
 git clone https://github.com/mikesprague/vagrant-lemtl.git
@@ -116,7 +78,7 @@ cd vagrant-lemtl/vagrantroot && vagrant up
 Once the Vagrant box finishes and is ready, you should see something like this in your terminal:
 
 ```bash
-==> default: Vagrant-LEMTL-v1.6.16
+==> default: Vagrant-LEMTL-v2.0.0
 ==> default:
 ==> default: ===============================================================
 ==> default:
