@@ -28,6 +28,7 @@ It is assumed you have Virtual Box and Vagrant installed. If not, then grab the 
 Once Vagrant is installed, or if it already is, it's highly recommended that you install the following Vagrant plugins:
 
 * [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) (v1.0.2)
+
   ```bash
   vagrant plugin install vagrant-hostsupdater
   ```
@@ -52,6 +53,7 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
     * Many thanks to Andrew Kretzer for his work updating cfspreadsheet-lucee for Lucee 5 compatibility
   * [jsoup v1.9.2](http://jsoup.org/) included in Lucee server bundles directory
     * Example instantiation:
+
       ```java
         objJsoup = createObject( "java", "org.jsoup.Jsoup" );
       ```
