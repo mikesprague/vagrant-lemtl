@@ -1,4 +1,7 @@
-[![Vagrant LEMTL v2.0.0](https://img.shields.io/badge/vagrant--lemtl-v2.0.0-000033.svg)](https://github.com/mikesprague/vagrant-lemtl) [![Vagrant v1.8.5](https://img.shields.io/badge/vagrant-v1.8.5-212121.svg)](https://www.vagrantup.com/downloads.html) [![Virtual Box v5.1.2-108956](https://img.shields.io/badge/virtualbox-v5.1.2--108956-003300.svg)](https://www.virtualbox.org/wiki/Downloads) [![Lucee v5.1.0.17](https://img.shields.io/badge/lucee-v5.1.0.17--BETA-2e0854.svg)](http://lucee.org/downloads.html) [![Codewake](https://www.codewake.com/badges/codewake.svg)](https://www.codewake.com/p/vagrant-lemtl)
+[![Vagrant LEMTL v2.0.0](https://img.shields.io/badge/vagrant--lemtl-v2.0.0-000033.svg)](https://github.com/mikesprague/vagrant-lemtl)
+[![Vagrant v1.8.6](https://img.shields.io/badge/vagrant-v1.8.6-212121.svg)](https://www.vagrantup.com/downloads.html)
+[![Virtual Box v5.1.8](https://img.shields.io/badge/virtualbox-v5.1.8-003300.svg)](https://www.virtualbox.org/wiki/Downloads)
+[![Lucee v5.1.0.31](https://img.shields.io/badge/lucee-v5.1.0.31-2e0854.svg)](http://lucee.org/downloads.html)
 
 # Vagrant LEMTL
 
@@ -10,7 +13,7 @@ Find this project useful? [Show some love :revolving_hearts:](https://www.creato
 
 ---
 
-**Last Updated July 31, 2016**
+**Last Updated October 21, 2016**
 
 ## Prerequisites
 
@@ -20,8 +23,8 @@ NOTE: All version numbers used in this document are confirmed to work, and are c
 
 It is assumed you have Virtual Box and Vagrant installed. If not, then grab the latest version of each at the links below:
 
-* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.1.2-108956)
-* [Vagrant](https://www.vagrantup.com/downloads.html) (v1.8.5)
+* [Virtual Box and Virtual Box Extension Pack](https://www.virtualbox.org/wiki/Downloads) (v5.1.8)
+* [Vagrant](https://www.vagrantup.com/downloads.html) (v1.8.6)
 
 ### Highly Recommended
 
