@@ -1,7 +1,7 @@
 [![Vagrant LEMTL v2.0.0](https://img.shields.io/badge/vagrant--lemtl-v2.0.0-000033.svg)](https://github.com/mikesprague/vagrant-lemtl)
 [![Vagrant v1.8.6](https://img.shields.io/badge/vagrant-v1.8.6-212121.svg)](https://www.vagrantup.com/downloads.html)
 [![Virtual Box v5.1.8](https://img.shields.io/badge/virtualbox-v5.1.8-003300.svg)](https://www.virtualbox.org/wiki/Downloads)
-[![Lucee v5.1.0.31](https://img.shields.io/badge/lucee-v5.1.0.31-2e0854.svg)](http://lucee.org/downloads.html)
+[![Lucee v5.1.0.17](https://img.shields.io/badge/lucee-v5.1.0.17-2e0854.svg)](http://lucee.org/downloads.html)
 
 # Vagrant LEMTL
 
@@ -43,8 +43,8 @@ Once Vagrant is installed, or if it already is, it's highly recommended that you
 * Ubuntu Server v14.04.4 LTS (Trusty Tahr) 64bit
   * Make sure curl, wget, unzip, zip, iptables, debconf-utils, and software-properties-common are installed
   * Set vm timezone (configure in Vagrantfile)
-  * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v15.04 (configurable via Vagrantfile)
-* Nginx v1.11.2
+  * NOTE: Tested and working with Ubuntu v12.04, v14.04, v14.10, v16.04 (configurable via Vagrantfile)
+* Nginx v1.11.5
   * Set up to serve all static content and reverse-proxy cfm/cfc/jsp requests to Tomcat
   * MariaDB v10.1.x or MySQL v5.7.x (defaults to MariaDB, configurable in Vagrantfile)
   * lower_case_table_names = 1 (disables case sensitivity)
